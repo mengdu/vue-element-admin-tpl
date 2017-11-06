@@ -8,8 +8,16 @@ import App from './App'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/main.css'
+import DropdownPlugin from './components/dropdown'
+import NavbarPlugin from './components/navbar'
+import ContextMenuPlugin from './components/context-menu'
+
 
 Vue.use(ElementUI)
+
+Vue.use(DropdownPlugin)
+Vue.use(NavbarPlugin)
+Vue.use(ContextMenuPlugin)
 
 Vue.prototype.$http = Axios
 Vue.http = Axios
