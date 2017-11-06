@@ -1,0 +1,19 @@
+body{
+  padding: 0;
+  margin: 0;
+  color: #313E51;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+div{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: #0FA0E5;
+}
+::selection{
+  background: #CBD1DE;
+}
