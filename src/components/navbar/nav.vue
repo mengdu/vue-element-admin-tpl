@@ -13,17 +13,16 @@
   } 
   .m-nav .m-nav-item{
     line-height: 30px;
-    color: #282C34;
   }
-  .m-nav .m-nav-item.active>a,
+  /*.m-nav .m-nav-item.active>a,
   .m-nav .m-nav-item>a:hover{
     background-color: rgba(0,0,0, 0.07);
-  }
+  }*/
   .m-nav .m-nav-item>a{
     padding: 10px 15px;
     display: block;
     height: 100%;
-    color: #282C34;
+    box-sizing: border-box;
   }
   @media(min-width: 768px) {
     .m-nav{

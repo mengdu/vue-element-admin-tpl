@@ -10,6 +10,10 @@
 + vuex
 
 
+## 截图
+
+![截图](app.png)
+
 ## Build Setup
 
 ``` bash

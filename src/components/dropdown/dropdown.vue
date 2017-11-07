@@ -1,4 +1,14 @@
 <style type="text/css">
+  .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
   .m-dropdown{
     display: inline-block;
     position: relative;
@@ -15,7 +25,6 @@
     box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.09);
   }
   .m-dropdown-menu .m-dropdown-item{
-
     min-width: 100px;
     margin-left: -10px;
     margin-right: -10px;
@@ -25,6 +34,11 @@
     color: #282C34;
     cursor: pointer;
     white-space: nowrap;
+  }
+  .m-dropdown-menu .m-dropdown-item>a{
+    display: inline-block;
+    width: 100%;
+    color: inherit;
   }
   .m-dropdown-menu .m-dropdown-item:hover{
     background: #1FA7EA;

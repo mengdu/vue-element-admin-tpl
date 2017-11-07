@@ -1,5 +1,5 @@
 <template>
-<el-menu default-active="1-4-1" class="el-menu-vertical-demo" :collapse="isCollapse">
+<el-menu default-active="1-4-1" class="side-menu" :collapse="isCollapse">
   <el-submenu index="1">
     <template slot="title">
       <i class="el-icon-location"></i>
@@ -31,15 +31,19 @@
 <script type="text/javascript">
 export default {
   name: 'app-side',
+  props: {
+    isCollapse: Boolean,
+    default: false
+  },
   data () {
     return {
-      isCollapse: false
+      // isCollapse: false
     }
   }
 }
 </script>
 <style type="text/css">
-  .el-menu{
+  .el-menu.side-menu{
     border-right: none;
   }
 </style>
