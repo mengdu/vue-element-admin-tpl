@@ -10,6 +10,30 @@
 + vuex
 
 
+## 组件
+
++ navbar 响应式导航
++ dropdown 下拉列表
+
+
+
+#### navbar
+
+响应式导航，类似bootstrap的风格
+
+#### dropdown
+
+下拉菜单，类似bootstrap风格
+
+## 指令
+
++ v-cmenu 模拟右键菜单
+
+#### v-cmenu
+
+虚拟的右键菜单
+
+
 ## 截图
 
 ![截图](app.png)
