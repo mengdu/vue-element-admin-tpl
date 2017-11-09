@@ -23,7 +23,7 @@
         <m-nav-item><a href="/">首页</a></m-nav-item>
         <m-nav-item><a href="#">产品</a></m-nav-item>
         <m-nav-item><a href="#">关于</a></m-nav-item>
-        <m-nav-item><a href="https://www.github.com/mengdu" target="_blank">github</a></m-nav-item>
+        <m-nav-item><a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank">github</a></m-nav-item>
         <m-nav-item>
           <m-dropdown menu-align="right">
             <a href="#" style="display: inline-block; padding: 10px;">
@@ -37,7 +37,7 @@
               <m-dropdown-item @click.native.stop="test" disabled>收藏</m-dropdown-item>
               <div class="test-line"></div>
               <m-dropdown-item command="exit">
-                <a href="/login">login</a>
+                <router-link :to="{name: 'login'}">logout</router-link>
               </m-dropdown-item>
             </m-dropdown-menu>
           </m-dropdown>
