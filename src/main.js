@@ -12,6 +12,7 @@ import DropdownPlugin from './components/dropdown'
 import NavbarPlugin from './components/navbar'
 import ContextMenuPlugin from './components/context-menu'
 import MButton from '@/components/button'
+import MSwitch from '@/components/switch'
 
 Vue.use(ElementUI)
 
@@ -19,6 +20,7 @@ Vue.use(DropdownPlugin)
 Vue.use(NavbarPlugin)
 Vue.use(ContextMenuPlugin)
 Vue.use(MButton)
+Vue.use(MSwitch)
 
 
 Vue.prototype.$http = Axios

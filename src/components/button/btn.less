@@ -1,6 +1,6 @@
 
 @btn-name: m-btn;
-@btn-border-radius: 2px;
+@btn-border-radius: 3px;
 @btn-border-default-color: #D7DDE4;
 
 @btn-default-color: #1F2F3D;
@@ -34,7 +34,6 @@ a.@{btn-name}{
   background-color: @btn-default-bgcolor;
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 5px;
   font-size: 14px;
   font: inherit;
   font-weight: 400;
@@ -56,19 +55,20 @@ a.@{btn-name}{
   -webkit-user-select:none;
   -ms-user-select:none;
   &:hover{
-      background-color: #F7F7F7;
+    background-color: #F7F7F7;
   }
   &:active,
   &.active,{
-      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    opacity: 0.9;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
   }
   &:disabled,
   &.disabled{
-      color: #A6AEB2;
-      cursor: not-allowed;
-      pointer-events: none;
-      background-color: #F8FAFA;
-      border-color: #E4EAEB;
+    color: #A6AEB2;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #F8FAFA;
+    border-color: #E4EAEB;
   }
   &&-rounded{
       border-radius: 50px;
@@ -135,7 +135,7 @@ a.@{btn-name}{
       left: -1px;
       bottom: -1px;
       right: -1px;
-      opacity: .6;
+      opacity: .7;
       border: solid 0px;
       border-color: inherit;
       border-radius: inherit;
@@ -176,17 +176,46 @@ a.@{btn-name}{
     border-bottom-right-radius: @btn-border-radius;
   }
 }
-.@{btn-name}-group + .@{btn-name}-group {
-  margin-top: 10px;
+
+
+/**
+* animation
+* e.g keyframes(effect-test, all, {css})
+*/
+.keyframes (@name, @prefix, @content) when (@prefix = def) {
+  @keyframes @name {
+    @content();
+  }
+}
+.keyframes (@name, @prefix, @content) when (@prefix = moz) {
+  @-moz-keyframes @name {
+    @content();
+  }
+}
+.keyframes (@name, @prefix, @content) when (@prefix = o) {
+  @-o-keyframes @name {
+    @content();
+  }
+}
+.keyframes (@name, @prefix, @content) when (@prefix = webkit) {
+  @-webkit-keyframes  @name{
+    @content();
+  }
+}
+.keyframes (@name, @prefix, @content) when (@prefix = all) {
+  .keyframes(@name, moz, @content);
+  .keyframes(@name, o, @content);
+  .keyframes(@name, webkit, @content);
+  .keyframes(@name, def, @content);
 }
 
-// .keyframes(btn-clicked-effect, all, {
-//     to{
-//         top: -6px;
-//         left: -6px;
-//         bottom: -6px;
-//         right: -6px;
-//         border-width: 6px;
-//         opacity: 0;
-//     }
-// });
+.keyframes(btn-clicked-effect, all, {
+  to{
+    top: -6px;
+    left: -6px;
+    bottom: -6px;
+    right: -6px;
+    border-width: 6px;
+    opacity: 0;
+  }
+});
