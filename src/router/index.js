@@ -17,7 +17,8 @@ export default new Router({
       children: [
         {path: '/', name: 'home', component: Home},
         {path: '/button', name: 'c-button', component: page('c-button')},
-        {path: '/switch', name: 'c-switch', component: page('c-switch')}
+        {path: '/switch', name: 'c-switch', component: page('c-switch')},
+        {path: '/alert', name: 'c-alert', component: page('c-alert')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')}
