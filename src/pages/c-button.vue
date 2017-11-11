@@ -89,7 +89,5 @@
 </div>
 </template>
 <style type="text/css">
-  .priview-box{
-    margin-bottom: 15px;
-  }
+  
 </style>

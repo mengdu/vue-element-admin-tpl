@@ -17,3 +17,7 @@ a{
 ::selection{
   background: #CBD1DE;
 }
+
+.priview-box{
+  margin-bottom: 15px;
+}

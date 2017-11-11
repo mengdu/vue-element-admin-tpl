@@ -16,6 +16,7 @@ import ContextMenuPlugin from './m/context-menu'
 import MButton from '@/m/button'
 import MSwitch from '@/m/switch'
 import MAlert from '@/m/alert'
+import MCheckbox from '@/m/checkbox'
 
 Vue.use(ElementUI)
 
@@ -25,6 +26,7 @@ Vue.use(ContextMenuPlugin)
 Vue.use(MButton)
 Vue.use(MSwitch)
 Vue.use(MAlert)
+Vue.use(MCheckbox)
 
 
 Vue.prototype.$http = Axios

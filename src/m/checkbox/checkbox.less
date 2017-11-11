@@ -1,0 +1,167 @@
+// 类前缀
+@checkbox: m-checkbox;
+// 未选中背景
+@c-unchecked-gb-color: #fff;
+// 未选中边框
+@c-unchecked-bd-color: #C5CFDC;
+// hover边框
+@c-hover-bd-color: #20A0FF;
+// 选中背景
+@c-checked-bg-color: #3399FF;
+// 禁用边框
+@c-disabled-bd-color: #E4E4E4;
+// 禁用字体
+@c-disabled-text-color: #BFBFBF;
+// 选中且禁用
+@c-disabled-checked-bg-color: #b1b9c1;
+
+.@{checkbox}{
+    display: inline-block;
+    position: relative;
+    min-width: 18px;
+    margin: 10px;
+    line-height: 18px;
+    font-size: 14px;
+    cursor: pointer;
+
+    user-select: none;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    &&-none-text{
+       .@{checkbox}-text{
+        display: none;
+       } 
+    }
+    & input[type=checkbox]{
+        padding: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+        margin-right: 17px;
+        cursor: inherit;
+        & ~ .@{checkbox}-bg{
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: @c-unchecked-gb-color;
+            border: solid 1px @c-unchecked-bd-color;
+            border-radius: 3px;
+            box-sizing: border-box;
+            cursor: inherit;
+            transition: background 0.2s ease;
+        }
+        & ~ .@{checkbox}-mark{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            width: 0px;
+            height: 0px;
+            border-radius: 1px;
+            background: none;
+            transform: rotate(45deg) scaleY(0);
+            transition: transform .15s cubic-bezier(.71,-.46,.88,.6);
+            transform-origin: center;
+            box-sizing: content-box;
+            cursor: inherit;
+        }
+        & ~ .@{checkbox}-text{
+            color: inherit;
+            opacity: .6;
+        }
+        &:hover ~ .@{checkbox}-bg{
+            border-color: @c-hover-bd-color;
+        }
+        &:hover ~ .@{checkbox}-text{
+            opacity: 1;
+        }
+        &:checked ~ .@{checkbox}-bg{
+            border-color: @c-checked-bg-color;
+            background: @c-checked-bg-color;
+        }
+        &:checked ~ .@{checkbox}-mark{
+            border: 2px solid #fff;
+            border-left: 0;
+            border-top: 0;
+            left: 6px;
+            top: 1px;
+            width: 4px;
+            height: 9px;
+            transform: rotate(45deg) scaleY(1);
+        }
+        &:checked ~ .@{checkbox}-text{
+            opacity: 1;
+        }
+        &:disabled ~ .@{checkbox}-bg{
+            border-color: @c-disabled-bd-color !important;
+            cursor: not-allowed;
+        }
+        &:checked:disabled ~ .@{checkbox}-bg{
+            border-color: @c-disabled-checked-bg-color !important;
+            background: @c-disabled-checked-bg-color !important;
+        }
+        &:checked:disabled ~ .@{checkbox}-mark{
+            cursor: not-allowed;
+        }
+        &:disabled ~ .@{checkbox}-text{
+            color: @c-disabled-text-color;
+            cursor: not-allowed;
+        }
+    }
+    // 选中部分
+    &&-portion input[type=checkbox]{
+        &:checked ~ .@{checkbox}-bg{
+            border-color: @c-checked-bg-color;
+            background: @c-unchecked-gb-color;
+        }
+        &:checked ~ .@{checkbox}-mark{
+            border: none;
+            width: 10px;
+            height: 10px;
+            background: @c-checked-bg-color;
+            transform: rotate(0deg);
+            top: 4px;
+            left: 4px;
+            border-radius: 2px;
+        }
+    }
+    // 使用主题
+    .make-checkbox-theme(primary, #7266BA, #7266BA);
+    .make-checkbox-theme(success, #03B976, #24D695);
+    .make-checkbox-theme(danger, #D9534F, #E55552);
+    .make-checkbox-theme(warning, #F0AD4E, #F0AD4E);
+    
+}
+/**
+* 定义主题
+* @theme 主题后缀
+* @c-checked-bg-color 选中背景
+* @c-hover-bd-color hover边框
+**/
+.make-checkbox-theme(@theme, @c-checked-bg-color, @c-hover-bd-color) {
+    &&-@{theme} input[type=checkbox]:hover ~ .@{checkbox}-bg{
+        border-color: @c-hover-bd-color;
+    }
+    &&-@{theme} input[type=checkbox]:checked ~ .@{checkbox}-bg{
+        border-color: @c-checked-bg-color;
+        background: @c-checked-bg-color;
+    }
+    &&-@{theme}&-portion input[type=checkbox]{
+        &:checked ~ .@{checkbox}-bg{
+            border-color: @c-checked-bg-color;
+            background: @c-unchecked-gb-color;
+        }
+        &:checked ~ .@{checkbox}-mark{
+            background: @c-checked-bg-color;
+        }
+    }
+}
