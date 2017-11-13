@@ -17,6 +17,7 @@ import MButton from '@/m/button'
 import MSwitch from '@/m/switch'
 import MAlert from '@/m/alert'
 import MCheckbox from '@/m/checkbox'
+import MInput from '@/m/input'
 
 Vue.use(ElementUI)
 
@@ -27,6 +28,7 @@ Vue.use(MButton)
 Vue.use(MSwitch)
 Vue.use(MAlert)
 Vue.use(MCheckbox)
+Vue.use(MInput)
 
 
 Vue.prototype.$http = Axios

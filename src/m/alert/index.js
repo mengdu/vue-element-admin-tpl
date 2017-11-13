@@ -1,7 +1,8 @@
 import MAlert from './alert'
 
-export default {
-  install (Vue) {
-    Vue.component(MAlert.name, MAlert)
-  }
+
+MAlert.install = function (Vue) {
+  Vue.component(MAlert.name, MAlert)
 }
+
+export default MAlert

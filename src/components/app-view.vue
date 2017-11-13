@@ -13,7 +13,7 @@
       <img src="../assets/logo.png" alt="" class="header-logo">
       <span class="header-logo-text">控制台</span>
     </div>
-    <app-side :isCollapse="isCollapse"></app-side>
+    <app-side :isCollapse="isCollapse" :menus="menus"></app-side>
   </el-aside>
   <el-container>
     <el-header class="app-header" :height="headerHeight + 'px'">
@@ -36,6 +36,7 @@
 import AppHeader from '@/components/app-header'
 import AppFooter from '@/components/app-footer'
 import AppSide from '@/components/app-side'
+import menus from './menus'
 export default {
   name: 'app-view',
   data () {
@@ -44,7 +45,8 @@ export default {
       hideSide: false,
       sideWidth: 200,
       footerHeight: 50,
-      headerHeight: 50
+      headerHeight: 50,
+      menus
     }
   },
   components: {

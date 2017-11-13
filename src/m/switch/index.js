@@ -1,7 +1,7 @@
 import MSwitch from './switch'
 
-export default {
-  install (Vue) {
-    Vue.component(MSwitch.name, MSwitch)
-  }
+MSwitch.install = function (Vue) {
+  Vue.component(MSwitch.name, MSwitch)
 }
+
+export default MSwitch

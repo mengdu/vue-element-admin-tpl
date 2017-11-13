@@ -1,7 +1,7 @@
 import MCrop from './crop'
 
-export default {
-  install (Vue) {
-    Vue.component(MCrop.name, MCrop)
-  }
+MCrop.install = function (Vue) {
+  Vue.component(MCrop.name, MCrop)
 }
+
+export default MCrop

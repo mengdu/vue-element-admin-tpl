@@ -19,7 +19,8 @@ export default new Router({
         {path: '/button', name: 'c-button', component: page('c-button')},
         {path: '/switch', name: 'c-switch', component: page('c-switch')},
         {path: '/checkbox', name: 'c-checkbox', component: page('c-checkbox')},
-        {path: '/alert', name: 'c-alert', component: page('c-alert')}
+        {path: '/alert', name: 'c-alert', component: page('c-alert')},
+        {path: '/input', name: 'c-input', component: page('c-input')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
