@@ -21,3 +21,82 @@ a{
 .priview-box{
   margin-bottom: 15px;
 }
+
+.page-body{
+  padding: 15px;
+}
+.page-body .page-header{
+  background: #fff;
+  padding: 15px;
+  margin: -15px -15px 15px -15px;
+}
+.page-body .page-header .page-title{
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 15px;
+  color: #585A5F;
+}
+
+.el-breadcrumb .el-breadcrumb__inner{
+  color: #4B4D52;
+  font-weight: 100;
+}
+.el-breadcrumb .el-breadcrumb__separator{
+  margin: 0 5px;
+  font-weight: 100;
+}
+.el-table .el-table__header thead th{
+  background: #E6EBF5;
+}
+
+
+
+.box{
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px;
+}
+.box .box-header:before,
+.box .box-header:after,
+.box .box-footer:before,
+.box .box-footer:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.box .box-header{
+  padding-bottom: 15px;
+}
+.box .box-footer{
+  padding: 15px 0;
+}
+.box .box-header .box-title{
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.progress-bg{
+  margin: 0 auto;
+  width: 60%;
+  height: 4px;
+  background: rgba(245,245,245, 0.2);
+  overflow: hidden;
+}
+.progress-bg .progress{
+  width: 50%;
+  height: 4px;
+  margin-left: -50%;
+  background: #19a05e;
+  float: left;
+  animation: progress 1s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    margin-left: -50%;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}

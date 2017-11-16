@@ -1,6 +1,13 @@
 <template>
-<div class="body">
-  <h1>Button</h1>
+<div class="page-body">
+  <div class="page-header">
+    <h1 class="page-title">Button 按钮</h1>
+    <el-breadcrumb>
+      <el-breadcrumb-item :to="{path: '/'}">首页</el-breadcrumb-item>
+      <el-breadcrumb-item >Button 按钮</el-breadcrumb-item>
+    </el-breadcrumb>
+  </div>
+
   <div class="priview-box">
     <h2>default</h2>
     <m-button>Default</m-button>

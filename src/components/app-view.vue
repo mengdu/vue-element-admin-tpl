@@ -13,9 +13,9 @@
       <img src="../assets/logo.png" alt="" class="header-logo">
       <span class="header-logo-text">控制台</span>
     </div>
-    <app-side :isCollapse="isCollapse" :menus="menus"></app-side>
+    <app-side :collapse="isCollapse"></app-side>
   </el-aside>
-  <el-container>
+  <el-container style="overflow-x: auto">
     <el-header class="app-header" :height="headerHeight + 'px'">
       <app-header @switch="handleSideSwitch" :height="headerHeight"></app-header>
     </el-header>
@@ -36,7 +36,6 @@
 import AppHeader from '@/components/app-header'
 import AppFooter from '@/components/app-footer'
 import AppSide from '@/components/app-side'
-import menus from './menus'
 export default {
   name: 'app-view',
   data () {
@@ -45,8 +44,7 @@ export default {
       hideSide: false,
       sideWidth: 200,
       footerHeight: 50,
-      headerHeight: 50,
-      menus
+      headerHeight: 50
     }
   },
   components: {
@@ -89,7 +87,7 @@ export default {
   }
   .app-container .app-page-body{
     overflow: visible;
-    padding: 15px;
+    padding: 0px;
   }
   .app-header-logo-box{
     padding: 15px;
