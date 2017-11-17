@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import Axios from 'axios'
+import NProgress from 'nprogress'
+
 
 import App from './App'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css'
 import '@/assets/css/main.css'
+import 'nprogress/nprogress.css'
 
 import DropdownPlugin from './m/dropdown'
 import NavbarPlugin from './m/navbar'
@@ -30,6 +33,16 @@ Vue.use(MAlert)
 Vue.use(MCheckbox)
 Vue.use(MInput)
 
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+})
+
+router.afterEach(transition => {
+  setTimeout(() => {
+    NProgress.done()
+  })
+})
 
 Vue.prototype.$http = Axios
 Vue.http = Axios

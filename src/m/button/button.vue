@@ -60,7 +60,8 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    handleClick (e) {
+      this.$emit('click', e)
       this.clicked = true
       setTimeout(() => {
         this.clicked = false
