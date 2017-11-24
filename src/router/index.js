@@ -29,6 +29,7 @@ export default new Router({
     {path: '/login', name: 'login', component: page('login')},
     // pages
     {path: '/home-login', name: 'p-login', component: page('home-login')},
-    {path: '/register', name: 'p-register', component: page('register')}
+    {path: '/register', name: 'p-register', component: page('register')},
+    {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')}
   ]
 })
