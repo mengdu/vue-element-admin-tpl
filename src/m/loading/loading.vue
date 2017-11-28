@@ -4,21 +4,36 @@
     'm-loading': !type,
     'm-wipe': type === 'wipe'
   }"
+  :style="{
+    width: width + 'px',
+    height: width + 'px'
+  }"
   >
-  <template v-if="type === 'wipe'">
-    <circle cx="25" cy="25" r="20" fill="none" class="path"></circle>
-  </template>
-  <template v-else>
-    <circle cx="25" cy="25" r="20" fill="none" stroke="#F2F2F2" class="path"></circle>
-    <circle cx="25" cy="25" r="20" fill="none" stroke="#24A2FF" stroke-dasharray="60,150" class="path"></circle>
-  </template>
+
+  <circle v-if="bgColor" :stroke="bgColor" cx="25" cy="25" r="20" class="bg-path"
+    :style="{
+      stroke: bgColor
+    }"
+    ></circle>
+  <circle cx="25" cy="25" r="20" class="active-path"
+    :style="{
+      stroke: color
+    }"
+    ></circle>
+
 </svg>
 </template>
 <script>
 export default {
   name: 'MLoading',
   props: {
-    type: String
+    width: [String, Number],
+    type: String,
+    color: String,
+    bgColor: {
+      type: [String, Boolean],
+      default: true
+    }
   }
 }
 </script>
@@ -29,27 +44,30 @@ export default {
     stroke: #343640;
     stroke-width: 2;
     stroke-linecap: round;
+    background: none;
+    vertical-align: middle;
   }
-  .svg-icon .path{
+  .svg-icon .bg-path{
     fill: none;
+    stroke: #F2F2F2;
+  }
+  .svg-icon .active-path{
+    fill: none;
+    stroke: #20a0ff;
   }
   .m-wipe{
-    background: none;
     animation: loading-rotate 2s linear infinite;
   }
-  .m-wipe .path{
-    background: none;
-    stroke-dasharray: 90,150;
+  .m-wipe .active-path{
+    stroke-dasharray: 90, 150;
     stroke-dashoffset: 0;
-    stroke-linecap: round;
-    stroke-width: 2px;
-    stroke: #20a0ff;
-    stroke-linecap: round;
     animation: loading-wipe 1.5s ease-in-out infinite;
   }
   .m-loading{
-    background: none;
     animation: loading-rotate 0.8s linear infinite;
+  }
+  .m-loading .active-path{
+    stroke-dasharray: 60, 150;
   }
   @keyframes loading-rotate{
     to{transform:rotate(1turn)}

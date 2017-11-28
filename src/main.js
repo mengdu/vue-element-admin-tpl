@@ -21,6 +21,9 @@ import MSwitch from '@/m/switch'
 import MAlert from '@/m/alert'
 import MCheckbox from '@/m/checkbox'
 import MInput from '@/m/input'
+import MLoading from '@/m/loading'
+import Mkeyboard from '@/m/keyboard'
+import MNumberkeyboard from '@/m/number-keyboard'
 
 Vue.use(ElementUI)
 
@@ -32,6 +35,10 @@ Vue.use(MSwitch)
 Vue.use(MAlert)
 Vue.use(MCheckbox)
 Vue.use(MInput)
+Vue.use(MLoading)
+Vue.use(Mkeyboard)
+Vue.use(MNumberkeyboard)
+
 
 router.beforeEach((to, from, next) => {
   NProgress.start()

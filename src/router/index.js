@@ -22,12 +22,14 @@ export default new Router({
         {path: '/alert', name: 'c-alert', component: page('c-alert')},
         {path: '/input', name: 'c-input', component: page('c-input')},
 
-        {path: '/data-table', name: 'p-data-table', component: page('table')}
+        {path: '/data-table', name: 'p-data-table', component: page('table')},
+        {path: '/demo', component: page('demo')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
     // pages
     {path: '/home-login', name: 'p-login', component: page('home-login')},
-    {path: '/register', name: 'p-register', component: page('register')}
+    {path: '/register', name: 'p-register', component: page('register')},
+    {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')}
   ]
 })
