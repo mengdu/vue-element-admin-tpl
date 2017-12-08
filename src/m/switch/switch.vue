@@ -37,6 +37,7 @@ export default {
   methods: {
     change () {
       this.$emit('input', this.state)
+      this.$emit('change', this.state)
     }
   },
   mounted () {

@@ -20,7 +20,7 @@ Button常用的操作按钮。
 
 + disabled 禁用状态
 + type 主题
-+ size 大小
++ size 大小 max, large, 默认, samll, mini
 + plain 朴素按钮
 + round 圆形按钮
 + block 块按钮

@@ -17,7 +17,7 @@
   </el-aside>
   <el-container style="overflow-x: auto">
     <el-header class="app-header" :height="headerHeight + 'px'">
-      <app-header @switch="handleSideSwitch" :height="headerHeight"></app-header>
+      <app-header @switch="handleSideSwitch" :height="headerHeight" @hide-side="handleSwitchHideSide"></app-header>
     </el-header>
     <el-main class="app-body">
       <el-container style="height: 100%;">
@@ -56,6 +56,9 @@ export default {
     handleSideSwitch (val) {
       this.isCollapse = val
       this.sideWidth = val ? 60 : 200
+    },
+    handleSwitchHideSide () {
+      this.hideSide = !this.hideSide
     }
   }
 }

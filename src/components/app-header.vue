@@ -42,24 +42,62 @@
             </m-dropdown-menu>
           </m-dropdown>
         </m-nav-item>
-        
+        <m-nav-item>
+          <a href="#" @click.stop.prevent="handleSwitchScreen">
+            <i 
+              class="fa" 
+              :class="isFullScreen ? 'fa-compress' : 'fa-expand'"
+              ></i>
+          </a>
+        </m-nav-item>
+        <m-nav-item>
+          <m-dropdown menu-align="right">
+            <a href="#"  style="display: inline-block; padding: 10px; 15px">
+              <i class="fa fa-gears"></i>
+              <!-- <span class="caret"></span> -->
+            </a>
+            <m-dropdown-menu>
+              <div style="width: 150px;min-height: 100px;color: #282C34;padding: 10px;">
+                <p><m-switch size="sm" @change="handleSwitchHideSide"></m-switch>&nbsp;隐藏侧边栏</p>
+              </div>
+            </m-dropdown-menu>
+          </m-dropdown>
+        </m-nav-item>
       </m-nav>
     </m-navbar>
   </el-main>
 </el-container>
 </template>
 <script type="text/javascript">
+import {
+  requestFullScreen,
+  exitFullscreen
+} from '@/utils'
 export default {
   name: 'app-header',
   data () {
     return {
-      mini: false
+      mini: false,
+      isFullScreen: false
     }
   },
   methods: {
     handleSwitchSide () {
       this.mini = !this.mini
       this.$emit('switch', this.mini)
+    },
+    handleSwitchScreen () {
+      if (this.isFullScreen) {
+        exitFullscreen()
+        this.isFullScreen = false
+      } else {
+        requestFullScreen()
+        this.isFullScreen = true
+      }
+    },
+    handleSwitchHideSide () {
+      console.log('change')
+      this.$emit('hide-side')
     }
   }
 }

@@ -24,6 +24,7 @@ import MInput from '@/m/input'
 import MLoading from '@/m/loading'
 import Mkeyboard from '@/m/keyboard'
 import MNumberkeyboard from '@/m/number-keyboard'
+import MBox from '@/m/box'
 
 Vue.use(ElementUI)
 
@@ -38,7 +39,7 @@ Vue.use(MInput)
 Vue.use(MLoading)
 Vue.use(Mkeyboard)
 Vue.use(MNumberkeyboard)
-
+Vue.use(MBox)
 
 router.beforeEach((to, from, next) => {
   NProgress.start()

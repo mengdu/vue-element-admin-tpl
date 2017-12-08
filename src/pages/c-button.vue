@@ -7,7 +7,16 @@
       <el-breadcrumb-item >Button 按钮</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
-
+  
+<m-box>
+    
+  <div>
+    <m-button type="info">信息</m-button>
+    <m-button type="primary">主色</m-button>
+    <m-button type="warning">警告</m-button>
+    <m-button type="success">成功</m-button>
+    <m-button type="danger">删除</m-button>
+  </div>
   <div class="priview-box">
     <h2>default</h2>
     <m-button>Default</m-button>
@@ -20,12 +29,12 @@
 
   <div class="priview-box">
     <h2>plain</h2>
-    <m-button plain>Default</m-button>
-    <m-button type="info" plain>Info</m-button>
-    <m-button type="primary" plain>Primary</m-button>
-    <m-button type="warning" plain>Warning</m-button>
-    <m-button type="danger" plain>Danger</m-button>
-    <m-button type="success" plain>Success</m-button>
+    <m-button plain size="large">Default</m-button>
+    <m-button type="info" plain size="large">Info</m-button>
+    <m-button type="primary" plain size="large">Primary</m-button>
+    <m-button type="warning" plain size="large">Warning</m-button>
+    <m-button type="danger" plain size="large">Danger</m-button>
+    <m-button type="success" plain size="large">Success</m-button>
   </div>
 
   <div class="priview-box">
@@ -37,7 +46,7 @@
     <m-button type="danger" round>Danger</m-button>
     <m-button type="success" round>Success</m-button>
   </div>
-  <div class="priview-box">
+  <!-- <div class="priview-box">
     <h2>active</h2>
     <m-button active>Default</m-button>
     <m-button type="info" active>Info</m-button>
@@ -45,7 +54,7 @@
     <m-button type="warning" active>Warning</m-button>
     <m-button type="danger" active>Danger</m-button>
     <m-button type="success" active>Success</m-button>
-  </div>
+  </div> -->
   <div class="priview-box">
     <h2>disabled</h2>
     <m-button disabled>Default</m-button>
@@ -58,9 +67,11 @@
 
   <div class="priview-box">
     <h2>size</h2>
-    <m-button size="lg">Default</m-button>
+    <m-button size="max">max</m-button>
+    <m-button size="large">large</m-button>
     <m-button >Default</m-button>
-    <m-button size="sm">Default</m-button>
+    <m-button size="small">small</m-button>
+    <m-button size="mini">mini</m-button>
   </div>
   
   <div class="priview-box">
@@ -92,9 +103,7 @@
     <m-button type="danger" block>Danger</m-button>
     <m-button type="success" block>Success</m-button>
   </div>
-
+</m-box>
 </div>
 </template>
-<style type="text/css">
-  
-</style>
+
