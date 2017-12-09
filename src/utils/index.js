@@ -7,6 +7,8 @@ export function requestFullScreen () {
     elem.mozRequestFullScreen()
   } else if (elem.webkitRequestFullScreen) {
     elem.webkitRequestFullScreen()
+  } else if (elem.msRequestFullscreen) {
+    elem.msRequestFullscreen(elem)
   }
 }
 // 退出全屏
@@ -18,5 +20,7 @@ export function exitFullscreen () {
     doc.mozCancelFullScreen()
   } else if (doc.webkitCancelFullScreen) {
     doc.webkitCancelFullScreen()
+  } else if (doc.msCancelFullScreen) {
+    doc.msCancelFullScreen()
   }
 }
