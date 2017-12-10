@@ -20,7 +20,7 @@
       <app-header @switch="handleSideSwitch" :height="headerHeight" @hide-side="handleSwitchHideSide"></app-header>
     </el-header>
     <el-main class="app-body">
-      <el-container style="height: 100%;">
+      <el-container style="height: 100%;min-height: 100%;overflow: auto">
         <el-main class="app-page-body"><router-view></router-view></el-main>
         <el-footer class="app-footer" :height="footerHeight + 'px'">
           <app-footer></app-footer>

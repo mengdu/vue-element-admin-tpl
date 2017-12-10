@@ -8,7 +8,8 @@ export function requestFullScreen () {
   } else if (elem.webkitRequestFullScreen) {
     elem.webkitRequestFullScreen()
   } else if (elem.msRequestFullscreen) {
-    elem.msRequestFullscreen(elem)
+    // elem.msRequestFullscreen() 没有指定元素
+    document.body.msRequestFullscreen()
   }
 }
 // 退出全屏
@@ -20,7 +21,7 @@ export function exitFullscreen () {
     doc.mozCancelFullScreen()
   } else if (doc.webkitCancelFullScreen) {
     doc.webkitCancelFullScreen()
-  } else if (doc.msCancelFullScreen) {
-    doc.msCancelFullScreen()
+  } else if (doc.msExitFullscreen) {
+    document.msExitFullscreen()
   }
 }

@@ -87,6 +87,9 @@ export default {
     position: relative;
     margin-bottom: 15px;
     font-size: 13px;
+    &:last-child{
+      margin-bottom: 0px;
+    }
     & .@{alert}-message {
       font-size: 15px;
       margin: 0;
@@ -113,7 +116,9 @@ export default {
         width: 100%;
         height: 100%;
         line-height: 12px;
-        font-size: 13px;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: sans-serif;
         top: 0;
         left: 0;
       }
