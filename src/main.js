@@ -12,6 +12,7 @@ import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css'
 import '@/assets/css/main.css'
+import '@/assets/css/reset.css'
 import 'nprogress/nprogress.css'
 
 import DropdownPlugin from './m/dropdown'

@@ -1,0 +1,21 @@
+.el-breadcrumb .el-breadcrumb__inner{
+  color: #4B4D52;
+  font-weight: 100;
+}
+.el-breadcrumb .el-breadcrumb__separator{
+  margin: 0 5px;
+  font-weight: 100;
+}
+.el-table .el-table__header thead th{
+  background: #E6EBF5;
+  color: #3c464e;
+}
+
+#nprogress .bar {
+  background: #812CB2 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #812CB2 !important;
+  border-left-color: #812CB2 !important;
+}

@@ -21,6 +21,7 @@ export default new Router({
         {path: '/checkbox', name: 'c-checkbox', component: page('c-checkbox')},
         {path: '/alert', name: 'c-alert', component: page('c-alert')},
         {path: '/input', name: 'c-input', component: page('c-input')},
+        {path: '/loading', name: 'c-loading', component: page('c-loading')},
 
         {path: '/data-table', name: 'p-data-table', component: page('table')},
         {path: '/demo', component: page('demo')}

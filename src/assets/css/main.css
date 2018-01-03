@@ -17,14 +17,19 @@ a{
   text-decoration: none;
   color: #0366d6;
 }
-#nprogress .bar {
-  background: #812CB2 !important;
+.f-left{
+  float: left;
+}
+.f-right{
+  float: right;
+}
+.clearfix:before,
+.clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
 }
 
-#nprogress .spinner-icon {
-  border-top-color: #812CB2 !important;
-  border-left-color: #812CB2 !important;
-}
 ::selection{
   background: #CBD1DE;
 }
@@ -48,17 +53,7 @@ a{
   color: #585A5F;
 }
 
-.el-breadcrumb .el-breadcrumb__inner{
-  color: #4B4D52;
-  font-weight: 100;
-}
-.el-breadcrumb .el-breadcrumb__separator{
-  margin: 0 5px;
-  font-weight: 100;
-}
-.el-table .el-table__header thead th{
-  background: #E6EBF5;
-}
+
 
 
 
