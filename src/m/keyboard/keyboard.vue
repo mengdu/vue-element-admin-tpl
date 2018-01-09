@@ -27,8 +27,8 @@
           <span class="m-key-down" v-else>{{isCapsLock ? key.upper : key.default}}</span>
         </template>
         <template v-else>
-          <span class="m-key-up">{{key.symbol}}</span>
-          <span class="m-key-down">{{isCapsLock ? key.upper : key.default}}</span>
+          <!-- <span class="m-key-up">{{key.symbol}}</span> -->
+          <span class="m-key-down">{{isCapsLock ? (key.upper || key.default) : key.default}}</span>
         </template>
       </button>
     </div>
@@ -54,12 +54,14 @@ export default {
       default () {
         return []
       }
-    }
+    },
+    lang: String
   },
   data () {
     return {
       isCapsLock: this.capsLock,
       isSymbol: this.symbol,
+      langType: this.lang || 'en',
       keys: [
         [
           {name: 'q', default: 'q', upper: 'Q', symbol: '1'},
@@ -72,9 +74,6 @@ export default {
           {name: 'i', default: 'i', upper: 'I', symbol: '8'},
           {name: 'o', default: 'o', upper: 'O', symbol: '9'},
           {name: 'p', default: 'p', upper: 'P', symbol: '0'}
-          // {name: '[', default: '[', upper: '[', symbol: '{'},
-          // {name: ']', default: ']', upper: ']', symbol: '}'},
-          // {name: '\\', default: '\\', upper: '\\', symbol: '|'}
         ],
         [
           {name: 'a', default: 'a', upper: 'A', symbol: '~'},
@@ -89,7 +88,7 @@ export default {
           {name: '=', default: '=', upper: '=', symbol: '+'}
         ],
         [
-          {name: 'shift', default: 'shift', upper: 'Shift', symbol: ''},
+          {name: 'shift', default: 'shift', upper: 'Shift'},
           {name: 'z', default: 'z', upper: 'Z', symbol: '('},
           {name: 'x', default: 'x', upper: 'X', symbol: ')'},
           {name: 'c', default: 'c', upper: 'C', symbol: '-'},
@@ -97,14 +96,15 @@ export default {
           {name: 'b', default: 'b', upper: 'B', symbol: ':'},
           {name: 'n', default: 'n', upper: 'N', symbol: ';'},
           {name: 'm', default: 'm', upper: 'M', symbol: '/'},
-          {name: 'back', default: 'back', upper: 'Back', symbol: ''}
+          {name: 'back', default: 'back', upper: 'Back'}
         ],
         [
-          {name: 'symbol', default: '符号', upper: '符号', symbol: ''},
-          {name: ',', default: ',', upper: ',', symbol: ''},
-          {name: 'space', default: 'space', upper: 'Space', symbol: ''},
-          {name: '.', default: '.', upper: '.', symbol: ''},
-          {name: 'enter', default: 'enter', upper: 'Enter', symbol: ''}
+          {name: 'symbol', default: '符号', upper: '符号'},
+          {name: ',', default: ',', upper: ','},
+          {name: 'space', default: 'space', upper: 'Space'},
+          {name: '.', default: '.', upper: '.'},
+          {name: 'lang', default: '英'},
+          {name: 'enter', default: 'enter', upper: 'Enter'}
         ]
       ]
     }
@@ -116,10 +116,19 @@ export default {
         case 'shift':
           this.$emit('shift')
           this.isCapsLock = !this.isCapsLock
+          this.isSymbol = false
           break
         case 'symbol':
           this.$emit('symbol')
           this.isSymbol = !this.isSymbol
+          this.isCapsLock = false
+          break
+        case 'lang':
+          this.$emit('lang')
+          this.langType = this.langType === 'en' ? 'zh' : 'en'
+          key.default = this.langType === 'en' ? '英' : '中'
+          this.isCapsLock = false
+          this.isSymbol = false
           break
         case 'enter':
           this.$emit('enter')
@@ -134,7 +143,8 @@ export default {
           } else {
             chart = this.isSymbol ? key.symbol : (this.isCapsLock ? key.upper : key.default)
           }
-          this.$emit('key', chart)
+          // console.log(chart)
+          this.$emit('key', chart, this)
       }
     }
   }
@@ -142,8 +152,10 @@ export default {
 </script>
 <style>
   .m-keyboard{
-    width: 480px;
-    height: 200px;
+    min-width: 480px;
+    min-height: 200px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -178,30 +190,28 @@ export default {
     border-radius: 3px;
     background: none;
     outline: none;
-    border: solid 1px #E5E5E5;
+    border: solid 1px #bfbfc1;
     color: #282C34;
     cursor: pointer;
   }
   .m-keyboard .m-key:hover{
-    border: solid 1px #2190BF;
+    border: solid 1px #0AADF7;
   }
+  .m-keyboard.m-keyboard-capsLock .m-key[data-key=shift],
+  .m-keyboard.m-keyboard-symbol .m-key[data-key=symbol],
   .m-keyboard .m-key:active{
-    color: #008BE5;
-    border: solid 1px #27A7E8;
+    color: #fff;
+    border: solid 1px #0AADF7;
+    background-color: #0AADF7;
   }
   .m-keyboard .m-key:disabled{
     color: #a8aaaf;
     border: solid 1px #E5E5E5;
     cursor: not-allowed;
+    background: none;
   }
   .m-keyboard .m-key .m-key-up,
   .m-keyboard .m-key .m-key-down{
     display: block;
-  }
-  .m-keyboard .m-key .m-key-up{
-    font-size: 13px;
-  }
-  .m-keyboard .m-key .m-key-down{
-    font-size: 20px;
   }
 </style>

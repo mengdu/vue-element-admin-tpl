@@ -1,10 +1,11 @@
 <template>
 <div class="box">
   <div style="margin-top: 100px"></div>
-  <div style="width: 480px; margin: 0 auto;">
+  <div style="width: 720px; margin: 0 auto;">
     <h2>复合虚拟键盘</h2>
     <el-input type="textarea" v-model="input"></el-input>
-    <m-keyboard @key="handleKey" @back="handleBack"></m-keyboard>
+
+    <m-keyboard @key="handleKey" @back="handleBack" :height="240"></m-keyboard>
     
     <div style="margin-top: 100px"></div>
     <h2>数字虚拟键盘</h2>

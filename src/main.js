@@ -12,6 +12,7 @@ import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css'
 import '@/assets/css/main.css'
+import '@/assets/css/scrollbar.css'
 import 'nprogress/nprogress.css'
 
 import DropdownPlugin from './m/dropdown'
@@ -59,9 +60,12 @@ Vue.http = Axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+var app = new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App }
 })
+
+window.app = app
+window.APP = process.env.APP_INFO

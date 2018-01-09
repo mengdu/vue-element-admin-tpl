@@ -14,16 +14,14 @@
   <el-main class="app-header-main">
     <m-navbar>
       <m-nav>
-        <m-nav-item active><a href="#">首页</a></m-nav-item>
-        <m-nav-item><a href="#">产品</a></m-nav-item>
-        <m-nav-item><a href="#">关于</a></m-nav-item>
-        <m-nav-item><a href="#">登录</a></m-nav-item>
+        <m-nav-item active><a href="https://www.lanyueos.com" target="_blank">主页</a></m-nav-item>
+        <m-nav-item><a href="https://blog.lanyueos.com" target="_blank">博客</a></m-nav-item>
+        <m-nav-item><a href="https://www.lanyueos.com" target="_blank">关于</a></m-nav-item>
       </m-nav>
       <m-nav float="right">
-        <m-nav-item><a href="/">首页</a></m-nav-item>
-        <m-nav-item><a href="#">产品</a></m-nav-item>
-        <m-nav-item><a href="#">关于</a></m-nav-item>
-        <m-nav-item><a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank">github</a></m-nav-item>
+        <m-nav-item>
+          <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
+        </m-nav-item>
         <m-nav-item>
           <m-dropdown menu-align="right">
             <a href="#" style="display: inline-block; padding: 10px;">
