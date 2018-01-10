@@ -1,6 +1,11 @@
 <template>
 
-<v-menu :collapse="collapse" :menus="menus" router class="side-menu"></v-menu>
+<v-menu class="side-menu"
+  :collapse="collapse"
+  :default-active="defaultActive"
+  :menus="menus"
+  router
+  ></v-menu>
 
 
 </template>
@@ -11,13 +16,29 @@ export default {
   props: {
     collapse: Boolean
   },
-  data () {
-    return {
-      menus
-    }
-  },
   components: {
     VMenu
+  },
+  data () {
+    return {
+      menus,
+      defaultActive: 'home',
+      test: 'asdfasdf'
+    }
+  },
+  watch: {
+    $route () {
+      this.setCurrentRoute()
+    }
+  },
+  methods: {
+    setCurrentRoute () {
+      console.log(this.$route)
+      this.defaultActive = this.$route.name
+    }
+  },
+  created () {
+    this.setCurrentRoute()
   }
 }
 </script>

@@ -22,7 +22,7 @@ export default new Router({
         {path: '/alert', name: 'c-alert', component: page('c-alert')},
         {path: '/input', name: 'c-input', component: page('c-input')},
         {path: '/keyboard', name: 'c-keyboard', component: page('c-keyboard')},
-
+        {path: '/loading', name: 'c-loading', component: page('c-loading')},
         {path: '/data-table', name: 'p-data-table', component: page('table')},
         {path: '/demo', component: page('demo')}
       ]

@@ -36,7 +36,8 @@ const menus = [
           {id: 'f5', name: 'c-input', label: 'Input 输入框'}
       ]],
       ['Notice', [
-        {id: 'n1', name: 'c-alert', label: 'Alert 警告'}
+        {id: 'n1', name: 'c-alert', label: 'Alert 警告'},
+        {id: 'n2', name: 'c-loading', label: 'Loading 加载'}
       ]]
     ]
   },
@@ -45,7 +46,7 @@ const menus = [
     icon: 'fa fa-pied-piper',
     label: 'Pages 页面',
     submenu: [
-      {id: 'p0', name: 'p-data-table', label: 'Table 表格数据'},
+      {id: 'p-data-table', name: 'p-data-table', label: 'Table 表格数据'},
       {id: 'p1', name: 'login', label: 'Login 登录'},
       {id: 'p2', name: 'p-login', label: 'Login 登录2'},
       {id: 'p3', name: 'p-register', label: 'Register 注册'},
