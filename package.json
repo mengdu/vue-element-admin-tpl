@@ -1,9 +1,12 @@
 {
   "name": "vue-element-admin-tpl",
   "version": "1.0.1",
-  "description": "A Vue.js project",
-  "author": "lyg <ygl@szmsmk.com.cn>",
+  "description": "A template for Vue",
+  "author": "lanyue <lanyueos@qq.com>",
   "private": true,
+  "app": {
+    "name": "基于Vue的后台管理系统模板"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "npm run dev",

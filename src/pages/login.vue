@@ -17,6 +17,12 @@
       <p class="text-tips">免密码，点击登录按钮进入</p>
       <button class="m-btn sub select-none" @click.prevent="handleLogin" v-loading="isLoging">登录</button>
     </form>
+    <div style="margin-top: 50px"></div>
+    <p class="text-tips">
+      <i class="fa fa-meetup" style="color: #29ABE2"></i>&nbsp;
+      <span class="footer-text">{{appName}} &nbsp;<el-tag size="mini">{{version}}</el-tag> <br>©make by <a href="https://www.github.com/mengdu" target="_blank">{{author}}</a>
+  </span>
+    </p>
   </div>
 </div>
 </template>
@@ -27,7 +33,10 @@ export default {
     return {
       name: '',
       pass: '',
-      isLoging: false
+      isLoging: false,
+      author: window.APP_INFO.author,
+      version: window.APP_INFO.version,
+      appName: window.APP_INFO.appName
     }
   },
   methods: {
@@ -59,11 +68,18 @@ export default {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
+  .m-list-group .m-list-group-item:last-child{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
   .fullscreen{
     position: absolute;
     width: 100%;
     height: 100%;
     background: #F4F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /*background-image: url(http://oogfn666s.bkt.clouddn.com/52746047c7a81a0dd797a2bf1ca91e98.png);*/
     /*background-size: cover;*/
   }
@@ -71,8 +87,8 @@ export default {
     position: relative;
     width: 330px;
     margin: 0 auto;
-    margin-top: -250px;
-    top: 45%;
+    /*margin-top: -250px;*/
+    /*top: 45%;*/
     padding: 0px 15px;
   }
   .login-box .logo{

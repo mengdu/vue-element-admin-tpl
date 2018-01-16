@@ -25,7 +25,7 @@
         <m-nav-item>
           <m-dropdown menu-align="right">
             <a href="#" style="display: inline-block; padding: 10px;">
-              <img src="../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;">
+              <!-- <img src="../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;"> -->
               <span>Administor</span> 
               <span class="caret"></span>
             </a>

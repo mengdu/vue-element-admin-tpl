@@ -54,7 +54,7 @@ router.afterEach(transition => {
     NProgress.done()
   })
 })
-
+window.APP_INFO = process.env.APP_INFO
 Vue.prototype.$http = Axios
 Vue.http = Axios
 
@@ -69,4 +69,4 @@ var app = new Vue({
 })
 
 window.app = app
-window.APP = process.env.APP_INFO
+
