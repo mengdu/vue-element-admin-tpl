@@ -1,5 +1,5 @@
 
-@btn-name: m-btn;
+@btn-name: m-button;
 @btn-border-radius: 4px;
 @btn-border-default-color: #727B84;
 
@@ -9,20 +9,20 @@
 @btn-info-bgcolor: #2DB7F5;
 @btn-primary-bgcolor: #7952B3;
 @btn-success-bgcolor: #03B976;
-@btn-danger-bgcolor: #ED4C40;
+@btn-danger-bgcolor: #F56C6C;
 @btn-warning-bgcolor: #F9AA40;
 
 @info-disabled-bgcolor: #6BCCEA;
 @primary-disabled-bgcolor: #9E98CE;
 @success-disabled-bgcolor: #56ceb0;
-@danger-disabled-bgcolor: #F08989;
+@danger-disabled-bgcolor: #FAB6B6;
 @warning-disabled-bgcolor: #ffc576;
 
 @color-default-light: #868E96;
 @color-primary-light: #8E74B4;
 @color-info-light: #36C1FA;
 @color-success-light: #05a56a;
-@color-danger-light: #F06F66;
+@color-danger-light: #F78989;
 @color-warning-light: #FAB458;
 
 a.@{btn-name}{
@@ -34,7 +34,7 @@ a.@{btn-name}{
   background-image: none;
   background-color: @btn-default-bgcolor;
   display: inline-block;
-  padding: 7px 15px;
+  padding: 7px 21px;
   font-size: 14px;
   font: inherit;
   font-weight: 400;
@@ -63,7 +63,20 @@ a.@{btn-name}{
   &:active,
   &.active,{
     opacity: 0.9;
-    // box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    position: relative;
+  }
+  &.active:after{
+    content: '';
+    position: absolute;
+    display: block;
+    top: -4px;
+    left: -4px;
+    bottom: -4px;
+    right: -4px;
+    opacity: 0.35;
+    border: solid 6px;
+    border-radius: 6px;
+    border-color: inherit;
   }
   & + &{
     margin-left: 10px;
@@ -79,20 +92,21 @@ a.@{btn-name}{
   &&-rounded{
     border-radius: 50px;
   }
-  &&-large{
-    padding: 10px 22px;
-  }
+  
   &&-max{
-    padding: 15px 34px;
+    padding: 15px 45px;
     font-size: 18px;
   }
+  &&-large{
+    padding: 10px 30px;
+  }
   &&-small{
-    padding: 4px 9px;
+    padding: 5px 15px;
     font-size: 13px;
   }
   &&-mini{
-    padding: 2px 5px;
-    font-size: 13px;
+    padding: 4px 12px;
+    font-size: 12px;
   }
   &&-block{
     display: block;

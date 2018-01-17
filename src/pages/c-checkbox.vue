@@ -1,6 +1,15 @@
 <template>
-<div class="body">
-  <h1>Checkbox</h1>
+<div class="page-body">
+  <div class="page-header">
+    <h1 class="page-title">Checkbox 多选框</h1>
+    <el-breadcrumb>
+      <el-breadcrumb-item :to="{path: '/'}">首页</el-breadcrumb-item>
+      <el-breadcrumb-item >Checkbox 多选框</el-breadcrumb-item>
+    </el-breadcrumb>
+  </div>
+<m-box>
+  
+
   <!-- <div class="priview-box">
     <m-checkbox >default</m-checkbox>
     <m-checkbox type="primary">primary</m-checkbox>
@@ -48,6 +57,7 @@
 
   <!-- <input type="checkbox" v-model="test" value="test" name="sss" /> -->
   <!-- <el-checkbox v-model="test" :checked="true" true-label="xxx1" false-label="xxx2" label="xxx1"></el-checkbox> -->
+</m-box>
 </div>
 </template>
 <script>

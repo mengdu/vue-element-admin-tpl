@@ -1,42 +1,68 @@
 # vue-element-admin-tpl
 
-> A Vue.js project
+基于vue + element-ui开发的后端管理系统模板。
 
-
-## 插件
-
-+ element-ui
++ vue
++ vue-router
 + axios
-+ vuex
++ element-ui
++ nprogress
++ 使用了 `FontAwesome 4.7.0` 的图标
 
 
-## 组件
-
-+ navbar 响应式导航
-+ dropdown 下拉列表
+> `src/m` 目录下收藏了些本人工作时开发的一些组件，欢迎使用与提建议；使用方法请看对应的README.md说明文档。
 
 
-
-#### navbar
-
-响应式导航，类似bootstrap的风格
-
-#### dropdown
-
-下拉菜单，类似bootstrap风格
-
-## 指令
-
-+ v-cmenu 模拟右键菜单
-
-#### v-cmenu
-
-虚拟的右键菜单
-
+> 注：布局采用了 `display:flex` 实现，在IE上可能会出现一些不愉快的事情。
 
 ## 截图
 
-![截图](app.png)
+![截图](20180117171004.png)
+
+![截图](20180117170917.png)
+
+
+
+## 关于打包
+
+
+对于打包，如果你使用git管理，推荐使用 `npm run publish` 命令进行打包，这样的的话打包前会执行更新 `package.json` 中的version字段；
+打包时会挂载 `APP_INFO` 对象到 `window` 对象上，在vue组件中可以直接 `window.APP_INFO` 访问版本信息。
+
+**window.APP_INFO**
+
+```js
+// window.APP_INFO对象大致内容
+
+{
+  projectName: pkg.name,
+  version: pkg.version,
+  description: pkg.description,
+  author: pkg.author,
+  appName: pkg.app && pkg.app.name || pkg.appName,
+  dependencies: pkg.dependencies,
+  engines: pkg.engines,
+  license: pkg.license,
+
+  // 如果是npm run publish打包会存在下面两个字段
+  // 打包时间
+  date: '',
+  // 本次打包MD5
+  md5: ''
+}
+
+```
+> 为什这么做？
+> 方便知道谁，什么时候打的包
+
+
+## 案例
+
+1、[**浙中牛牛**（预览版）](http://www.lanyueos.com:3003) 账号：admin 密码：123456 （请不要乱改数据）
+
+![浙中牛牛 预览版](20180117175701.png)
+
+
 
 ## Build Setup
 

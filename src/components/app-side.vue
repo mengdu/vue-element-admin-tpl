@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     setCurrentRoute () {
-      console.log(this.$route)
+      // console.log(this.$route)
       this.defaultActive = this.$route.name
     }
   },

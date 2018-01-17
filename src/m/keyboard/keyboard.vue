@@ -14,6 +14,7 @@
     >
     <div class="m-kb-item" 
       v-for="key in row"
+      v-if="!key.hide"
       >
       <button class="m-key" 
         v-if="key.name"
@@ -55,7 +56,8 @@ export default {
         return []
       }
     },
-    lang: String
+    lang: String,
+    langHide: Boolean
   },
   data () {
     return {
@@ -103,7 +105,7 @@ export default {
           {name: ',', default: ',', upper: ','},
           {name: 'space', default: 'space', upper: 'Space'},
           {name: '.', default: '.', upper: '.'},
-          {name: 'lang', default: '英'},
+          {name: 'lang', default: this.langType === 'en' ? '英' : '中', hide: this.langHide},
           {name: 'enter', default: 'enter', upper: 'Enter'}
         ]
       ]
@@ -124,11 +126,11 @@ export default {
           this.isCapsLock = false
           break
         case 'lang':
-          this.$emit('lang')
           this.langType = this.langType === 'en' ? 'zh' : 'en'
           key.default = this.langType === 'en' ? '英' : '中'
           this.isCapsLock = false
           this.isSymbol = false
+          this.$emit('lang', this.langType, this)
           break
         case 'enter':
           this.$emit('enter')
@@ -137,14 +139,14 @@ export default {
           this.$emit('back')
           break
         default:
-          var chart = ''
+          var ch = ''
           if (key.name === 'space') {
-            chart = ' '
+            ch = ' '
           } else {
-            chart = this.isSymbol ? key.symbol : (this.isCapsLock ? key.upper : key.default)
+            ch = this.isSymbol ? key.symbol : (this.isCapsLock ? key.upper : key.default)
           }
-          // console.log(chart)
-          this.$emit('key', chart, this)
+          // console.log('this', this)
+          this.$emit('key', ch, this)
       }
     }
   }

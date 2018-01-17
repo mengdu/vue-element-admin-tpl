@@ -30,12 +30,12 @@
               <span class="caret"></span>
             </a>
             <m-dropdown-menu>
-              <m-dropdown-item>用户中心</m-dropdown-item>
-              <m-dropdown-item command="article">文章</m-dropdown-item>
-              <m-dropdown-item @click.native.stop="test" disabled>收藏</m-dropdown-item>
+              <m-dropdown-item>用户信息</m-dropdown-item>
+              <m-dropdown-item command="article">修改密码</m-dropdown-item>
+              <m-dropdown-item @click.native.stop="test" disabled>注销</m-dropdown-item>
               <div class="test-line"></div>
               <m-dropdown-item command="exit">
-                <router-link :to="{name: 'login'}">logout</router-link>
+                <router-link :to="{name: 'login'}">退出账号</router-link>
               </m-dropdown-item>
             </m-dropdown-menu>
           </m-dropdown>

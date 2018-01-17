@@ -1,14 +1,14 @@
 <template>
-  <button class="m-btn"
+  <button class="m-button"
     @click="handleClick"
     :disabled="disabled"
     :class="[
-      type && 'm-btn-' + type,
-      size && 'm-btn-' + size,
+      type && 'm-button-' + type,
+      size && 'm-button-' + size,
       {
-        'm-btn-type-plain': plain,
-        'm-btn-rounded': round,
-        'm-btn-block': block,
+        'm-button-type-plain': plain,
+        'm-button-rounded': round,
+        'm-button-block': block,
         'active': active,
         'clicked': (effect && clicked && !active)
       }
@@ -52,7 +52,8 @@ export default {
     block: {
       type: Boolean,
       default: false
-    }
+    },
+    router: [String, Object]
   },
   data () {
     return {
@@ -61,8 +62,18 @@ export default {
   },
   methods: {
     handleClick (e) {
-      this.$emit('click', e)
+      // 跳转路由
+      if (this.router && this.$router) {
+        if (typeof this.router === 'string') {
+          this.$router.push({path: this.router})
+          return false
+        } else if (typeof this.router === 'object') {
+          this.$router.push(this.router)
+          return false
+        }
+      }
       this.clicked = true
+      this.$emit('click', e)
       setTimeout(() => {
         this.clicked = false
       }, 500)
