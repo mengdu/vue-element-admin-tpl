@@ -5,10 +5,11 @@ body{
 body{
   padding: 0;
   margin: 0;
-  color: #313E51;
+  color: #464C5B;
   font-size: 14px;
   line-height: 1.4;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Microsoft YaHei";
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Microsoft YaHei";*/
   /*font-family: Roboto, Segoe UI, "Microsoft YaHei", Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;*/
 }
 div{
