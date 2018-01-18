@@ -3,6 +3,7 @@
   :class="{
     'm-input-block': block
   }"
+  @click="handleClick"
   >
   <textarea v-if="type === 'textarea'" class="m-input m-input-textarea" v-model="val"
     :placeholder="placeholder"
@@ -80,6 +81,17 @@ export default {
       if (val !== this.value) {
         this.$emit('input', val)
       }
+    }
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
+    },
+    handleFocus (e) {
+      this.$emit('focus', e)
+    },
+    handleBlur (e) {
+      this.$emit('blur', e)
     }
   }
 }

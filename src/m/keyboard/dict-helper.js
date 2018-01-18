@@ -5,8 +5,8 @@ const dict = {
 }
 
 var pykeys = Object.keys(dict.pyhz)
-window.pykeys = pykeys
-window.dict = dict
+// window.pykeys = pykeys
+// window.dict = dict
 // 构造a~z的汉字映射
 for (var i = 97; i < 123; i++) {
   var ch = String.fromCharCode(i)

@@ -57,7 +57,10 @@ export default {
       }
     },
     lang: String,
-    langHide: Boolean
+    langHide: {
+      type: Boolean,
+      default: true
+    }
   },
   data () {
     return {

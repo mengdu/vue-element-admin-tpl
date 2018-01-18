@@ -29,6 +29,7 @@
     @enter="handleEnter"
     @lang="handleSwitchLang"
     :lang="this.langType"
+    :langHide="false"
     ></keyboard>
 </div>
 </template>
@@ -42,6 +43,15 @@ export default {
     value: {
       type: String,
       default: ''
+    },
+    candidateLen: {
+      type: Number,
+      default: 9
+    },
+    sync: Boolean,
+    listener: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -50,9 +60,23 @@ export default {
       input: '',
       output: '',
       mathResult: null,
-      pageSize: 9,
+      pageSize: this.candidateLen,
       currentPage: 1,
       langType: 'zh'
+    }
+  },
+  watch: {
+    value (val) {
+      if (this.output !== val) {
+        // console.log('value')
+        this.output = val
+      }
+    },
+    output (val) {
+      if (this.sync && this.value !== val) {
+        // console.log('output')
+        this.$emit('input', val)
+      }
     }
   },
   components: {keyboard},
@@ -167,17 +191,21 @@ export default {
           this.selectWord(ch - 1)
         }
       }
-      console.log(keyCode)
+      // console.log(keyCode)
     }
   },
   mounted () {
     this.output = this.value
     this.keyboard = this.$refs['keyboard']
-    window.pykeyboard = this.keyboard
-    document.addEventListener('keydown', this.handleKeydown)
+    // window.pykeyboard = this.keyboard
+    if (this.listener) {
+      document.addEventListener('keydown', this.handleKeydown)
+    }
   },
   beforeDestroy () {
-    document.removeEventListener('keydown', this.handleKeydown)
+    if (this.listener) {
+      document.removeEventListener('keydown', this.handleKeydown)
+    }
   }
 }
 </script>
@@ -210,7 +238,7 @@ export default {
     height: 20px;
   }
   .m-keyboard-candidate-word .m-candidate-word{
-    font-size: 25px;
+    font-size: 22px;
     padding: 5px 15px;
     display: inline-block;
     border-radius: 3px;

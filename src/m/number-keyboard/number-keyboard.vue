@@ -106,11 +106,11 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 3px;
     background: none;
     outline: none;
-    border: solid 1px #E5E5E5;
+    border: solid 1px #bfbfc1;
     color: #282C34;
     cursor: pointer;
   }
@@ -125,9 +125,10 @@ export default {
     border: solid 1px #27A7E8;
   }
   .m-number-keyboard .m-nkb-item .m-key:disabled{
-    color: #CBCBCB;
-    border-color: #F2F2F2;
+    color: #9f9fad;
+    border-color: #e3e3e8;
     cursor: not-allowed;
+    background: #efeff1;
   }
   .m-number-keyboard .m-nkb-item.m-key-enter .m-key:disabled{
     background: #898E8E;
