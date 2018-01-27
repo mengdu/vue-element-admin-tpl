@@ -8,6 +8,7 @@ import NProgress from 'nprogress'
 
 
 import App from './App'
+import store from './store'
 import router from './router'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/font-awesome-4.7.0/css/font-awesome.min.css'
@@ -15,6 +16,8 @@ import '@/assets/css/main.css'
 import '@/assets/css/scrollbar.css'
 import '@/assets/css/reset.css'
 import 'nprogress/nprogress.css'
+import 'animate.css'
+
 
 import DropdownPlugin from './m/dropdown'
 import NavbarPlugin from './m/navbar'
@@ -54,6 +57,8 @@ router.afterEach(transition => {
     NProgress.done()
   })
 })
+
+
 window.APP_INFO = process.env.APP_INFO
 Vue.prototype.$http = Axios
 Vue.http = Axios
@@ -63,6 +68,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 var app = new Vue({
   el: '#app',
+  store,
   router,
   template: '<App/>',
   components: { App }

@@ -28,6 +28,7 @@ export default new Router({
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
+    {path: '/cnode', name: 'cnode', component: page('cnode')},
     // pages
     {path: '/home-login', name: 'p-login', component: page('home-login')},
     {path: '/register', name: 'p-register', component: page('register')},

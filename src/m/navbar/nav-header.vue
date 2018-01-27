@@ -39,7 +39,7 @@
 </style>
 <template>
 <div class="m-nav-header">
-  <div class="m-navbar-brand"><slot name="navbar-brand"></slot></div>
+  <div class="m-navbar-brand"><slot></slot></div>
   <div class="m-navbar-toggle" @click.stop="handleToggle">
     <slot name="navbar-toggle" >
       <button class="navbar-toggle">
