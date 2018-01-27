@@ -25,6 +25,7 @@ const menus = [
     label: 'Pages 页面',
     submenu: [
       {id: 'p-data-table', name: 'p-data-table', label: 'Table 表格数据'},
+      {id: 'cnode', name: 'cnode', label: 'Cnode社区'},
       {id: 'p1', name: 'login', label: 'Login 登录'},
       {id: 'p2', name: 'p-login', label: 'Login 登录2'},
       {id: 'p3', name: 'p-register', label: 'Register 注册'},
