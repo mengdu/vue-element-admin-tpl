@@ -25,7 +25,7 @@
       placement="bottom"
       width="730"
       trigger="click">
-      <m-py-keyboard v-model="zhinput" :height="240" :candidate-len="8" sync @enter="$refs.pykb.doClose()"></m-py-keyboard>
+      <m-py-keyboard v-model="zhinput" :height="240" :candidate-len="8" lang="en" sync @enter="$refs.pykb.doClose()"></m-py-keyboard>
     </el-popover>
     <m-input type="textarea" v-model="zhinput" v-popover:pykb block placeholder="点击输入"></m-input>
     

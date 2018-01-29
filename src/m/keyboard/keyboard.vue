@@ -108,7 +108,7 @@ export default {
           {name: ',', default: ',', upper: ','},
           {name: 'space', default: 'space', upper: 'Space'},
           {name: '.', default: '.', upper: '.'},
-          {name: 'lang', default: this.langType === 'en' ? '英' : '中', hide: this.langHide},
+          {name: 'lang', default: this.lang === 'ch' ? '中' : '英', hide: this.langHide},
           {name: 'enter', default: 'enter', upper: 'Enter'}
         ]
       ]
@@ -129,8 +129,8 @@ export default {
           this.isCapsLock = false
           break
         case 'lang':
-          this.langType = this.langType === 'en' ? 'zh' : 'en'
-          key.default = this.langType === 'en' ? '英' : '中'
+          key.default = key.default === '中' ? '英' : '中'
+          this.langType = key.default === '中' ? 'zh' : 'en'
           this.isCapsLock = false
           this.isSymbol = false
           this.$emit('lang', this.langType, this)
@@ -152,6 +152,9 @@ export default {
           this.$emit('key', ch, this)
       }
     }
+  },
+  created () {
+    console.log(this.langType, this.lang)
   }
 }
 </script>
