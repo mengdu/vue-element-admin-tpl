@@ -23,10 +23,10 @@
           <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
         </m-nav-item>
         <m-nav-item>
-          <m-dropdown menu-align="right">
+          <m-dropdown menu-align="right" v-if="user">
             <a href="#" style="display: inline-block; padding: 10px;">
-              <!-- <img src="../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;"> -->
-              <span>Administor</span> 
+              <img src="../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;">
+              <span>{{user.username}}</span> 
               <span class="caret"></span>
             </a>
             <m-dropdown-menu>
@@ -67,6 +67,7 @@
 </el-container>
 </template>
 <script type="text/javascript">
+import {mapActions, mapState} from 'vuex'
 import {
   requestFullScreen,
   exitFullscreen
@@ -79,7 +80,13 @@ export default {
       isFullScreen: false
     }
   },
+  computed: {
+    ...mapState({
+      user: ({user}) => user.user
+    })
+  },
   methods: {
+    ...mapActions(['getLoginUser', 'logout']),
     handleSwitchSide () {
       this.mini = !this.mini
       this.$emit('switch', this.mini)
@@ -97,6 +104,9 @@ export default {
       console.log('change')
       this.$emit('hide-side')
     }
+  },
+  created () {
+    this.getLoginUser()
   }
 }
 </script>

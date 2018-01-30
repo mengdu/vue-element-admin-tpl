@@ -8,10 +8,10 @@
     <form action="" class="login-form">
       <div class="m-list-group">
         <div class="m-list-group-item">
-          <input type="text" placeholder="Username" class="m-input" v-model="name">
+          <input type="text" placeholder="Username" class="m-input" v-model="username">
         </div>
         <div class="m-list-group-item">
-          <input type="password" placeholder="Password" class="m-input" v-model="pass">
+          <input type="password" placeholder="Password" class="m-input" v-model="password">
         </div>
       </div>
       <p class="text-tips">免密码，点击登录按钮进入</p>
@@ -27,12 +27,13 @@
 </div>
 </template>
 <script>
+import {mapActions} from 'vuex'
 export default {
   name: 'login',
   data () {
     return {
-      name: '',
-      pass: '',
+      username: 'Administor',
+      password: '123456',
       isLoging: false,
       author: window.APP_INFO.author,
       version: window.APP_INFO.version,
@@ -40,12 +41,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['login']),
     handleLogin () {
+      if (!this.username || !this.password) {
+        return this.$message.warning('用户名和密码不能为空')
+      }
       this.isLoging = true
-      setTimeout(() => {
+      this.login({
+        username: this.username,
+        password: this.password
+      }).then(res => {
+        this.$message.success('用户名和密码不能为空')
         this.$router.push({name: 'home'})
         this.isLoging = false
-      }, 1500)
+      })
     }
   }
 }
