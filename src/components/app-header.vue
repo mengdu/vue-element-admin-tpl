@@ -1,8 +1,6 @@
 <template>
-<el-container class="app-header-box">
-  <el-aside
-    :width="'50px'"
-    >
+<m-navbar theme="info">
+  <m-navbar-brand>
     <i class="side-switch"
       :class="{
         'el-icon-more': !mini,
@@ -10,58 +8,55 @@
       }"
       @click="handleSwitchSide"
       ></i>
-  </el-aside>
-  <el-main class="app-header-main">
-    <!-- <m-navbar>
-      <m-nav>
-        <m-nav-item active><a href="https://www.lanyueos.com" target="_blank">主页</a></m-nav-item>
-        <m-nav-item><a href="https://blog.lanyueos.com" target="_blank">博客</a></m-nav-item>
-        <m-nav-item><a href="https://www.lanyueos.com" target="_blank">关于</a></m-nav-item>
-      </m-nav>
-      <m-nav float="right">
-        <m-nav-item>
-          <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
-        </m-nav-item>
-        <m-nav-item>
-          <m-dropdown align="right" v-if="user">
-            <a href="#" style="display: inline-block; padding: 10px;">
-              <img src="../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;">
-              <span>{{user.username}}</span> 
-              <span class="caret"></span>
-            </a>
-            <m-dropdown-panel>
-              <m-dropdown-item>用户信息</m-dropdown-item>
-              <m-dropdown-item >修改密码</m-dropdown-item>
-              <m-dropdown-item disabled>注销</m-dropdown-item>
-              <div class="test-line"></div>
-              <m-dropdown-item name="login">退出账号</m-dropdown-item>
-            </m-dropdown-panel>
-          </m-dropdown>
-        </m-nav-item>
-        <m-nav-item>
-          <a href="#" @click.stop.prevent="handleSwitchScreen">
-            <i 
-              class="fa" 
-              :class="isFullScreen ? 'fa-compress' : 'fa-expand'"
-              ></i>
-          </a>
-        </m-nav-item>
-        <m-nav-item>
-          <m-dropdown align="right">
-            <a href="#"  style="display: inline-block; padding: 10px; 15px">
-              <i class="fa fa-gears"></i>
-            </a>
-            <m-dropdown-panel>
-              <div style="width: 150px;min-height: 100px;color: #282C34;padding: 10px;">
-                <p><m-switch size="sm" @change="handleSwitchHideSide"></m-switch>&nbsp;隐藏侧边栏</p>
-              </div>
-            </m-dropdown-panel>
-          </m-dropdown>
-        </m-nav-item>
-      </m-nav>
-    </m-navbar> -->
-  </el-main>
-</el-container>
+  </m-navbar-brand>
+  <m-nav>
+    <m-nav-item><a href="https://www.lanyueos.com" target="_blank">主页</a></m-nav-item>
+    <m-nav-item><a href="https://blog.lanyueos.com" target="_blank">博客</a></m-nav-item>
+    <m-nav-item><a href="https://www.lanyueos.com" target="_blank">关于</a></m-nav-item>
+  </m-nav>
+  <m-nav align="right">
+    <m-nav-item>
+      <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
+    </m-nav-item>
+    <m-nav-item style="padding: 0">
+      <m-dropdown align="right" v-if="user">
+        <a href="#" style="display: inline-block; padding: 0px; color: inherit">
+          <img src="../assets/user.jpg" alt="" style="border-radius: 3px;vertical-align: middle;">
+          <span>{{user.username}}</span> 
+          <span class="caret"></span>
+        </a>
+        <m-dropdown-panel>
+          <m-dropdown-item>用户信息</m-dropdown-item>
+          <m-dropdown-item >修改密码</m-dropdown-item>
+          <m-dropdown-item disabled>注销</m-dropdown-item>
+          <div class="test-line"></div>
+          <m-dropdown-item name="login">退出账号</m-dropdown-item>
+        </m-dropdown-panel>
+      </m-dropdown>
+    </m-nav-item>
+    <m-nav-item>
+      <a href="#" @click.stop.prevent="handleSwitchScreen">
+        <i 
+          class="fa" 
+          :class="isFullScreen ? 'fa-compress' : 'fa-expand'"
+          ></i>
+      </a>
+    </m-nav-item>
+
+    <m-nav-item>
+      <m-dropdown align="right">
+        <a href="#"  style="padding:0 0px; color: inherit">
+          <i class="fa fa-gears"></i>
+        </a>
+        <m-dropdown-panel>
+          <div style="width: 150px;min-height: 100px;color: #282C34;padding: 10px;">
+            <p><m-switch size="sm" @change="handleSwitchHideSide"></m-switch>&nbsp;隐藏侧边栏</p>
+          </div>
+        </m-dropdown-panel>
+      </m-dropdown>
+    </m-nav-item>
+  </m-nav>
+</m-navbar>
 </template>
 <script type="text/javascript">
 import {mapActions, mapState} from 'vuex'
@@ -108,36 +103,14 @@ export default {
 }
 </script>
 <style type="text/css">
-  .app-header-box{
-    height: 100%;
-  }
   .side-switch{
-    display: block;
+    display: inline-block;
     font-size: 32px;
-    margin-left: 10px;
-    margin-top: 8px;
     cursor: pointer;
     color: #d3f2fd;
+    margin-top: 10px;
   }
   .side-switch:hover{
-    color: #fff;
-  }
-  .app-header-box .app-header-main{
-    padding: 0;
-    overflow: visible;
-  }
-  .app-header-main .m-navbar{
-    box-sizing: border-box;
-    height: 100%;
-    background: none;
-    color: #d3f2fd;
-  }
-  .app-header-main .m-navbar .m-nav-item>a,
-  .app-header-main .m-navbar .m-dropdown>a{
-    color: inherit;
-  }
-  .app-header-main .m-navbar .m-nav-item>a:hover,
-  .app-header-main .m-navbar .m-dropdown>a:hover{
     color: #fff;
   }
 </style>
