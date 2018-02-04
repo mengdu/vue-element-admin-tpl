@@ -23,21 +23,19 @@
           <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
         </m-nav-item>
         <m-nav-item>
-          <m-dropdown menu-align="right" v-if="user">
+          <m-dropdown align="right" v-if="user">
             <a href="#" style="display: inline-block; padding: 10px;">
               <img src="../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;">
               <span>{{user.username}}</span> 
               <span class="caret"></span>
             </a>
-            <m-dropdown-menu>
+            <m-dropdown-panel>
               <m-dropdown-item>用户信息</m-dropdown-item>
-              <m-dropdown-item command="article">修改密码</m-dropdown-item>
-              <m-dropdown-item @click.native.stop="test" disabled>注销</m-dropdown-item>
+              <m-dropdown-item >修改密码</m-dropdown-item>
+              <m-dropdown-item disabled>注销</m-dropdown-item>
               <div class="test-line"></div>
-              <m-dropdown-item command="exit">
-                <router-link :to="{name: 'login'}">退出账号</router-link>
-              </m-dropdown-item>
-            </m-dropdown-menu>
+              <m-dropdown-item name="login">退出账号</m-dropdown-item>
+            </m-dropdown-panel>
           </m-dropdown>
         </m-nav-item>
         <m-nav-item>
@@ -49,16 +47,15 @@
           </a>
         </m-nav-item>
         <m-nav-item>
-          <m-dropdown menu-align="right">
+          <m-dropdown align="right">
             <a href="#"  style="display: inline-block; padding: 10px; 15px">
               <i class="fa fa-gears"></i>
-              <!-- <span class="caret"></span> -->
             </a>
-            <m-dropdown-menu>
+            <m-dropdown-panel>
               <div style="width: 150px;min-height: 100px;color: #282C34;padding: 10px;">
                 <p><m-switch size="sm" @change="handleSwitchHideSide"></m-switch>&nbsp;隐藏侧边栏</p>
               </div>
-            </m-dropdown-menu>
+            </m-dropdown-panel>
           </m-dropdown>
         </m-nav-item>
       </m-nav>

@@ -24,6 +24,7 @@ export default new Router({
         {path: '/keyboard', name: 'c-keyboard', component: page('c-keyboard')},
         {path: '/loading', name: 'c-loading', component: page('c-loading')},
         {path: '/data-table', name: 'p-data-table', component: page('table')},
+        {path: '/dropdown', name: 'c-dropdown', component: page('c-dropdown')},
         {path: '/demo', name: 'demo', component: page('demo')}
       ]
     },

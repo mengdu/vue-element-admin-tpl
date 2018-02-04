@@ -21,22 +21,21 @@
             <el-badge :value="5" is-dot><i class="fa fa-bell"></i></el-badge></a>
           </m-nav-item>
           <m-nav-item>
-          <m-dropdown menu-align="right">
+          <m-dropdown align="right">
             <a href="#" style="display: inline-block; padding: 10px;">
               <img src="../../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;">
               <span>Lanyue</span> 
               <span class="caret"></span>
             </a>
-            <m-dropdown-menu>
+            <m-dropdown-panel>
               <m-dropdown-item><i class="fa fa-vcard-o"></i>&nbsp;用户信息</m-dropdown-item>
               <m-dropdown-item command="article"><i class="fa fa-pencil"></i>&nbsp;修改密码</m-dropdown-item>
               <!-- <m-dropdown-item @click.native.stop="test" disabled /><i class="fa fa-chain-broken"></i>&nbsp;注销</m-dropdown-item> -->
               <div class="test-line"></div>
-              <m-dropdown-item command="exit">
-                <i class="fa fa-toggle-left"></i>&nbsp;
-                <router-link :to="{name: 'login'}">退出账号</router-link>
+              <m-dropdown-item path="/login">
+                <i class="fa fa-toggle-left"></i>&nbsp;退出账号
               </m-dropdown-item>
-            </m-dropdown-menu>
+            </m-dropdown-panel>
           </m-dropdown>
           </m-nav-item>
         </m-nav>

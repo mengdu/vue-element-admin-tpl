@@ -3,7 +3,7 @@ const menus = [
   {
     id: 'components',
     icon: 'fa fa-microchip',
-    label: 'Components 组件',
+    label: '组件',
     submenu: [
       ['Form 表单', [
         {id: 'f1', name: 'c-button', label: 'Button 按钮', icon: 'fa fa-hand-o-up'},
@@ -16,6 +16,9 @@ const menus = [
       ['Notice', [
         {id: 'n1', name: 'c-alert', label: 'Alert 警告', icon: 'fa fa-info'},
         {id: 'n2', name: 'c-loading', label: 'Loading 加载', icon: 'fa fa-circle-o-notch'}
+      ]],
+      ['Other', [
+        {id: 'c-dropdown', name: 'c-dropdown', label: 'Dropdown'}
       ]]
     ]
   },
