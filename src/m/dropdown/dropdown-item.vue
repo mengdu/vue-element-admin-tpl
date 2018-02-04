@@ -3,11 +3,11 @@
 </style>
 <template>
 <li class="m-dropdown-item"
-  :class="{'disabled': disabled}"
+  :class="{'disabled': disabled, active}"
   :disabled="disabled"
   @click.stop="handleClick"
   >
-  <router-link :to="{name, path}" v-if="name || path">
+  <router-link :to="{name, path}" v-if="name || path && !disabled">
     <slot></slot>
   </router-link>
   <template v-else>
@@ -29,6 +29,7 @@ export default {
       type: Boolean,
       default: false
     },
+    active: Boolean,
     offClick: {
       type: Boolean,
       default: false

@@ -4,7 +4,8 @@
 .@{dorpdown-name}{
   display: inline-block;
   position: relative;
-  
+  user-select: none;
+
   & .caret {
     display: inline-block;
     width: 0;
@@ -72,6 +73,7 @@
     margin-right: -10px;
     padding: 0 10px;
   }
+  &.active,
   &:hover {
     background: #f3f3f5;
     font-weight: 500;

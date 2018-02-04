@@ -1,6 +1,6 @@
 <template>
 <div class="m-navbar"
-  :class="{open: isOpen}"
+  :class="[theme, {open: isOpen}]"
   >
   <slot></slot>
 </div>
@@ -9,6 +9,9 @@
 <script>
 export default {
   name: 'MNavbar',
+  props: {
+    theme: String
+  },
   data () {
     return {
       isOpen: false
