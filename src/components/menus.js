@@ -18,7 +18,8 @@ const menus = [
         {id: 'n2', name: 'c-loading', label: 'Loading 加载', icon: 'fa fa-circle-o-notch'}
       ]],
       ['Other', [
-        {id: 'c-dropdown', name: 'c-dropdown', label: 'Dropdown'}
+        {id: 'c-dropdown', name: 'c-dropdown', label: 'Dropdown'},
+        {id: 'c-navbar', name: 'c-navbar', label: 'Navbar'}
       ]]
     ]
   },

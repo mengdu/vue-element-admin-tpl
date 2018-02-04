@@ -25,6 +25,7 @@ export default new Router({
         {path: '/loading', name: 'c-loading', component: page('c-loading')},
         {path: '/data-table', name: 'p-data-table', component: page('table')},
         {path: '/dropdown', name: 'c-dropdown', component: page('c-dropdown')},
+        {path: '/navbar', name: 'c-navbar', component: page('c-navbar')},
         {path: '/demo', name: 'demo', component: page('demo')}
       ]
     },

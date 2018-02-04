@@ -12,7 +12,7 @@
       ></i>
   </el-aside>
   <el-main class="app-header-main">
-    <m-navbar>
+    <!-- <m-navbar>
       <m-nav>
         <m-nav-item active><a href="https://www.lanyueos.com" target="_blank">主页</a></m-nav-item>
         <m-nav-item><a href="https://blog.lanyueos.com" target="_blank">博客</a></m-nav-item>
@@ -59,7 +59,7 @@
           </m-dropdown>
         </m-nav-item>
       </m-nav>
-    </m-navbar>
+    </m-navbar> -->
   </el-main>
 </el-container>
 </template>

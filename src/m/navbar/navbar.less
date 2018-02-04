@@ -1,0 +1,87 @@
+@nav-name: m-nav;
+@navbar-name: m-navbar;
+
+.@{navbar-name} {
+  height: 50px;
+  padding: 0 15px;
+  background-color: #F8F9FA;
+  line-height: 50px;
+
+  & &-brand{
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  & &-toggler{
+    margin-top: 10px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    display: none;
+    
+    & .m-icon-bar{
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      margin: 5px 0;
+      background-color: #646464;
+    }
+  }
+}
+
+.@{nav-name} {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  &.right{
+    float: right;
+  }
+
+  & &-item {
+    display: inline-block;
+    padding: 0 15px;
+    cursor: pointer;
+
+    & > a {
+      color: inherit;
+      margin: 0 -15px;
+      padding: 0 15px;
+      line-height: inherit;
+      display: inline-block;
+    }
+    &.disabled {
+      color: #b3b3b3;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .@{navbar-name} {
+    & &-brand {
+      display: block;
+      margin-right: 0;
+    }
+    & &-toggler {
+      display: block;
+    }
+  }
+  .@{navbar-name}.open {
+    height: auto;
+  }
+  .@{navbar-name} .@{nav-name} {
+    display: none;
+  }
+  .@{navbar-name}.open .@{nav-name} {
+    display: block;
+    float: none !important;
+    &-item{
+      display: block;
+    }
+  }
+}
