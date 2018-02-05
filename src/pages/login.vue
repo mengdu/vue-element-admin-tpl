@@ -51,7 +51,7 @@ export default {
         username: this.username,
         password: this.password
       }).then(res => {
-        this.$message.success('用户名和密码不能为空')
+        this.$message.success('登录成功')
         this.$router.push({name: 'home'})
         this.isLoging = false
       })

@@ -6,18 +6,20 @@
     'hide-side': hideSide
   }"
   >
-  <el-aside class="app-side" :width="hideSide ? '0' : sideWidth + 'px'">
+  <el-aside class="app-side" :width="hideSide ? '0' : sideWidth + 'px'"
+    :style="{background: theme.theme.backgroundColor}"
+    >
     <div class="app-header-logo-box"
-      :style="{height: headerHeight + 'px'}"
+      :style="{height: headerHeight + 'px', color: theme.theme.activeTextColor}"
       >
       <img src="../assets/logo.png" alt="" class="header-logo">
-      <span class="header-logo-text">控制台</span>
+      <span class="header-logo-text" >控制台</span>
     </div>
-    <app-side :collapse="isCollapse"></app-side>
+    <app-side :collapse="isCollapse" :theme="theme.theme"></app-side>
   </el-aside>
   <el-container style="overflow-x: auto">
     <el-header class="app-header" :height="headerHeight + 'px'">
-      <app-header @switch="handleSideSwitch" :height="headerHeight" @hide-side="handleSwitchHideSide"></app-header>
+      <app-header @switch="handleSideSwitch" @set-theme="handleSetTheme" @hide-side="handleSwitchHideSide"></app-header>
     </el-header>
     <el-main class="app-body">
       <el-container style="height: 100%;min-height: 100%;overflow: auto">
@@ -44,7 +46,8 @@ export default {
       hideSide: false,
       sideWidth: 200,
       footerHeight: 50,
-      headerHeight: 50
+      headerHeight: 50,
+      theme: {theme: {}}
     }
   },
   components: {
@@ -59,6 +62,9 @@ export default {
     },
     handleSwitchHideSide () {
       this.hideSide = !this.hideSide
+    },
+    handleSetTheme (theme) {
+      this.theme = theme
     }
   }
 }
@@ -73,8 +79,8 @@ export default {
   .app-container .app-header{
     padding: 0;
     background: #16AAD8;
-    color: #fff;
     overflow: visible;
+    z-index: 100;
   }
   .app-container .app-side{
     width: 200px;
@@ -106,7 +112,6 @@ export default {
     vertical-align: middle;
   }
   .app-header-logo-box .header-logo-text{
-    color: #293436;
     font-size: 20px;
     font-weight: bold;
     opacity: 1;

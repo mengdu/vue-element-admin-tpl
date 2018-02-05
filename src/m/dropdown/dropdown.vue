@@ -1,6 +1,7 @@
 <template>
   <div class="m-dropdown" 
     :class="[{open: isOpen}, align, verticalAlign]"
+    :style="{padding}"
     @click.stop="handleClick"
     @mouseover="handleOver"
     @mouseout="handleOut"
@@ -13,6 +14,7 @@ export default {
   name: 'MDropdown',
   props: {
     show: Boolean,
+    padding: String,
     align: {
       type: String
     },

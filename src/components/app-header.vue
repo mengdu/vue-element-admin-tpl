@@ -1,5 +1,5 @@
 <template>
-<m-navbar theme="info">
+<m-navbar :theme="theme.theme.headerTheme">
   <m-navbar-brand>
     <i class="side-switch"
       :class="{
@@ -15,11 +15,11 @@
     <m-nav-item><a href="https://www.lanyueos.com" target="_blank">关于</a></m-nav-item>
   </m-nav>
   <m-nav align="right">
-    <m-nav-item>
+    <m-nav-item padding="0">
       <a href="https://github.com/mengdu/vue-element-admin-tpl" target="_blank"><i class="fa fa-github" style="font-size: 26px;vertical-align: middle;"></i>&nbsp;Github</a>
     </m-nav-item>
-    <m-nav-item style="padding: 0">
-      <m-dropdown align="right" v-if="user">
+    <m-nav-item padding="0">
+      <m-dropdown align="right" v-if="user" padding="0 10px">
         <a href="#" style="display: inline-block; padding: 0px; color: inherit">
           <img src="../assets/user.jpg" alt="" style="border-radius: 3px;vertical-align: middle;">
           <span>{{user.username}}</span> 
@@ -34,7 +34,7 @@
         </m-dropdown-panel>
       </m-dropdown>
     </m-nav-item>
-    <m-nav-item>
+    <m-nav-item padding="0 5px">
       <a href="#" @click.stop.prevent="handleSwitchScreen">
         <i 
           class="fa" 
@@ -43,15 +43,27 @@
       </a>
     </m-nav-item>
 
-    <m-nav-item>
-      <m-dropdown align="right">
+    <m-nav-item padding="0">
+      <m-dropdown align="right" padding="0 10px">
         <a href="#"  style="padding:0 0px; color: inherit">
           <i class="fa fa-gears"></i>
         </a>
-        <m-dropdown-panel>
-          <div style="width: 150px;min-height: 100px;color: #282C34;padding: 10px;">
-            <p><m-switch size="sm" @change="handleSwitchHideSide"></m-switch>&nbsp;隐藏侧边栏</p>
-          </div>
+        <m-dropdown-panel style="width: 200px; min-height: 100px;">
+          <el-form>
+            <el-form-item label="侧边栏">
+              <el-switch v-model="showAside" @change="handleSwitchHideSide" />
+            </el-form-item>
+            <el-form-item label="主题">
+              <el-select v-model="themeType" style="width: 100px">
+                <el-option
+                  v-for="theme in themes"
+                  :key="theme.label"
+                  :label="theme.label"
+                  :value="theme.name"
+                  ></el-option>
+              </el-select>
+            </el-form-item>
+          </el-form>
         </m-dropdown-panel>
       </m-dropdown>
     </m-nav-item>
@@ -64,18 +76,29 @@ import {
   requestFullScreen,
   exitFullscreen
 } from '@/utils'
+import themes from './theme'
 export default {
   name: 'app-header',
   data () {
     return {
       mini: false,
-      isFullScreen: false
+      isFullScreen: false,
+      themes,
+      themeType: '',
+      showAside: true,
+      theme: {theme: {headerTheme: 'info'}}
     }
   },
   computed: {
     ...mapState({
       user: ({user}) => user.user
     })
+  },
+  watch: {
+    themeType (val) {
+      this.theme = this.themes.find(e => e.name === val) || {}
+      this.$emit('set-theme', this.theme)
+    }
   },
   methods: {
     ...mapActions(['getLoginUser', 'logout']),
@@ -107,7 +130,7 @@ export default {
     display: inline-block;
     font-size: 32px;
     cursor: pointer;
-    color: #d3f2fd;
+    color: inherit;
     margin-top: 10px;
   }
   .side-switch:hover{
