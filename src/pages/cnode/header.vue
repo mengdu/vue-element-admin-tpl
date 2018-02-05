@@ -2,11 +2,11 @@
   <div class="header">
     <div class="cnode-container">
       <m-navbar class="cnode-navbar">
-        <m-nav-header>
+        <m-navbar-brand>
           <a href="/cnode"><img src="https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg" class="nav-logo" alt=""></a>
-        </m-nav-header>
+        </m-navbar-brand>
         <m-nav>
-          <m-nav-item style="padding:10px 15px;">
+          <m-nav-item>
             <input type="text" class="nav-search">
           </m-nav-item>
         </m-nav>
@@ -17,12 +17,14 @@
           <m-nav-item><a href="https://www.lanyueos.com" target="_blank">关于</a></m-nav-item>
           <m-nav-item><a href="https://www.github.com/mengdu" target="_blank">Github</a></m-nav-item>
           <m-nav-item>
-            <a href="#">
-            <el-badge :value="5" is-dot><i class="fa fa-bell"></i></el-badge></a>
+            <span>
+              <el-badge :value="5" is-dot><i class="fa fa-bell"></i></el-badge>
+            </span>
+            
           </m-nav-item>
           <m-nav-item>
           <m-dropdown align="right">
-            <a href="#" style="display: inline-block; padding: 10px;">
+            <a href="#" style="display: inline-block;">
               <img src="../../assets/user.jpg" alt="" style="vertical-align: middle; border-radius: 3px;">
               <span>Lanyue</span> 
               <span class="caret"></span>
