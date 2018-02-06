@@ -4,6 +4,7 @@
     active: active,
     disabled: disabled
   }"
+  :style="{padding}"
   :disabled="disabled"
   @click="handleClick"
   >
@@ -18,6 +19,7 @@ export default {
     name: String,
     path: String,
     cmd: String,
+    padding: String,
     active: {
       type: Boolean,
       default: false

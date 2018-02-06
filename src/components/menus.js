@@ -1,5 +1,5 @@
 const menus = [
-  {id: '0', label: '控制面板', path: '/', icon: 'fa fa-home'},
+  {id: '0', label: '控制面板', path: '/', icon: 'fa fa-dashboard'},
   {
     id: 'components',
     icon: 'fa fa-microchip',
@@ -25,7 +25,7 @@ const menus = [
   },
   {
     id: 'pages',
-    icon: 'fa fa-pied-piper',
+    icon: 'fa fa-circle-o',
     label: 'Pages 页面',
     submenu: [
       {id: 'p-data-table', name: 'p-data-table', label: 'Table 表格数据'},

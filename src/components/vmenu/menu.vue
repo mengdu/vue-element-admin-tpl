@@ -116,15 +116,11 @@ export default {
     border-right: none;
   }
   .el-menu .fa{
-    font-size: 18px;
-    margin-right: 7px;
+    font-size: 15px;
+    margin-right: 0px;
     display: inline-block;
     width: 23px;
     text-align: center;
+    color: inherit;
   }
-/*  .el-menu.side-menu .el-menu-item.is-active {
-    color: #409EFF;
-    border-right: solid 2px #36c1fa;
-    background: #eef3f5;
-  }*/
 </style>
