@@ -31,6 +31,7 @@ import MLoading from '@/m/loading'
 import Mkeyboard from '@/m/keyboard'
 import MNumberkeyboard from '@/m/number-keyboard'
 import MBox from '@/m/box'
+import MBackTop from '@/m/back-top'
 
 Vue.use(ElementUI)
 
@@ -46,6 +47,7 @@ Vue.use(MLoading)
 Vue.use(Mkeyboard)
 Vue.use(MNumberkeyboard)
 Vue.use(MBox)
+Vue.use(MBackTop)
 
 
 var whiteList = ['demo', 'login']

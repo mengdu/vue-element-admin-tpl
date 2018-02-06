@@ -15,6 +15,7 @@
   </m-demo>
 </m-box>
 
+<m-back-top></m-back-top>
 
 </div>
 </template>
