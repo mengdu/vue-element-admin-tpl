@@ -26,7 +26,9 @@ export default new Router({
         {path: '/data-table', name: 'p-data-table', component: page('table')},
         {path: '/dropdown', name: 'c-dropdown', component: page('c-dropdown')},
         {path: '/navbar', name: 'c-navbar', component: page('c-navbar')},
-        {path: '/demo', name: 'demo', component: page('demo')}
+        {path: '/demo', name: 'demo', component: page('demo')},
+        {path: '/404', name: '404', component: page('404')},
+        {path: '/*', redirect: {name: '404'}}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
