@@ -1,7 +1,7 @@
 <template>
 <div class="error-panel animated fadeInUp">
-  <h1 class="error-code">404</h1>
-  <p class="error-description">Page Not Found</p>
+  <h1 class="error-code">500</h1>
+  <p class="error-description">Internal Server Error</p>
   <div class="error-ctrl">
     <m-button type="info" @click="$router.push({name: 'home'})" round><i class="fa fa-home"></i>&nbsp;主页</m-button>
     <m-button @click="$router.back()" round plain><i class="fa fa-arrow-left"></i>&nbsp;返回</m-button>
@@ -35,6 +35,7 @@
     font-weight: 100;
     text-align: center;
     margin: 0;
+    color: #f77373;
   }
   .error-panel .error-description{
     text-align: center;

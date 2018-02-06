@@ -28,6 +28,7 @@ export default new Router({
         {path: '/navbar', name: 'c-navbar', component: page('c-navbar')},
         {path: '/demo', name: 'demo', component: page('demo')},
         {path: '/404', name: '404', component: page('404')},
+        {path: '/500', name: '500', component: page('500')},
         {path: '/*', redirect: {name: '404'}}
       ]
     },

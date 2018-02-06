@@ -33,8 +33,8 @@ const menus = [
       {id: 'p1', name: 'login', label: 'Login 登录'},
       {id: 'p2', name: 'p-login', label: 'Login 登录2'},
       {id: 'p3', name: 'p-register', label: 'Register 注册'},
-      {id: 'p4', path: '/404', label: '404'},
-      {id: 'p5', path: '/500', label: '500'}
+      {id: '400', path: '/404', label: '404'},
+      {id: '500', path: '/500', label: '500'}
     ]
   },
   {
