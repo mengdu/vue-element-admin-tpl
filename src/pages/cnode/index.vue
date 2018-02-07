@@ -1,5 +1,5 @@
 <template>
-<div class="cnode-page" ref="cnode">
+<div class="cnode-page" ref="cnode" id="cnode">
 <meta name="renderer" content="webkit|ie-stand|ie-comp">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <cnode-header class="cnode-header"></cnode-header>
@@ -45,6 +45,8 @@
 <div class="footer" style="margin-top: 100px; height: 100px; background-color: #fff">
   
 </div>
+
+<m-back-top></m-back-top>
 </div>
 </template>
 <script>
