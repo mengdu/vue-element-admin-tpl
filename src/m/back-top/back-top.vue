@@ -71,8 +71,14 @@ export default {
       this.body.addEventListener('scroll', this.scrollListenner, false)
     },
     scrollListenner (e) {
-      console.log(this.body.scrollTop)
+      // console.log(this.body.scrollTop)
       if (!this.body) return false
+
+      if (this.body.scrollTop === 0) {
+        this.$emit('scroll-top')
+      }
+
+      // 处理显示back-top
       if (this.body.scrollTop > parseInt(this.offsetTop)) {
         this.show = true
       } else {
@@ -93,15 +99,19 @@ export default {
     } else {
       el = document.body
     }
-    console.log(el)
     this.body = el
     this.handleListenner()
     this.scrollListenner()
+  },
+  destroyed () {
+    if (!this.body) return false
+    this.show = false
+    // 移除滚动事件
+    this.body.removeEventListener('scroll', this.scrollListenner)
   }
 }
 </script>
 <style>
-  /*@import url('./back-top.css');*/
   .m-back-top {
     width: 30px;
     height: 30px;

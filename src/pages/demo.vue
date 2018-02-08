@@ -22,8 +22,6 @@
 
 <div style="height: 2000px"></div>
 
-<m-back-top body-id="appBody"></m-back-top>
-
 </div>
 </template>
 <style>

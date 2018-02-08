@@ -32,6 +32,7 @@ import Mkeyboard from '@/m/keyboard'
 import MNumberkeyboard from '@/m/number-keyboard'
 import MBox from '@/m/box'
 import MBackTop from '@/m/back-top'
+import MContainer from '@/m/container'
 
 Vue.use(ElementUI)
 
@@ -48,7 +49,7 @@ Vue.use(Mkeyboard)
 Vue.use(MNumberkeyboard)
 Vue.use(MBox)
 Vue.use(MBackTop)
-
+Vue.use(MContainer)
 
 var whiteList = ['demo', 'login']
 router.beforeEach((to, from, next) => {
