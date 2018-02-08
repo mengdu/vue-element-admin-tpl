@@ -1,0 +1,124 @@
+
+@container: m-container;
+
+@row-name: m-row;
+@columns-name: m-col;
+@columns-pading: 15px;
+@grid-count: 12;
+
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+.@{container},
+.@{container}-fluid{
+  padding-left: @columns-pading;
+  padding-right: @columns-pading;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 960px;/*为了兼容不支持媒体选择的浏览器*/
+  -webkit-transition:width 0.9s cubic-bezier(1,-0.02, 0, 1.04);// for Safari and Chrome
+  -moz-transition:width 0.9s cubic-bezier(1,-0.02, 0, 1.04);// for Firefox
+  -o-transition:width 0.9s cubic-bezier(1,-0.02, 0, 1.04);// for Opera
+  -ms-transition:width 0.9s cubic-bezier(1,-0.02, 0, 1.04);// for ie
+  transition:width 0.5s cubic-bezier(1,-0.02, 0, 1.04);
+  -webkit-box-sizing: border-box;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+.@{container}-fluid{
+  min-width: 0;
+  width: 100%;
+}
+.@{row-name}{
+  min-height: 1px;
+  margin-left: -@columns-pading;
+  margin-right: -@columns-pading;
+  clear: both;
+  &:before,
+  &:after{
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+// 列基础css
+.columns-base-css() {
+  position: relative;
+  min-height: 1px;
+  padding-right: @columns-pading;
+  padding-left: @columns-pading;
+  
+  -webkit-box-sizing: border-box;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+// 循环列，设置基础css
+.make-grid-columns(@len: @grid-count) {
+  .col(@i) {
+    @classList: ~".@{columns-name}-xs-@{i},.@{columns-name}-sm-@{i},.@{columns-name}-md-@{i},.@{columns-name}-lg-@{i}";
+    .col(@i + 1, ~"@{classList}");
+  }
+  .col(@i, @list) when (@i =< @len){
+    @classList: ~".@{columns-name}-xs-@{i},.@{columns-name}-sm-@{i},.@{columns-name}-md-@{i},.@{columns-name}-lg-@{i}";
+    .col(@i + 1, ~"@{classList},@{list}");
+  }
+  .col(@i, @list) when (@i > @len) {
+    @{list} {
+      .columns-base-css();
+    }
+  }
+  .col(1)
+}
+.make-grid-columns(@grid-count);
+
+// 循环生成列
+.make-columns-loop(@type, @n, @i: 1) when (@i <= @n){
+  @col-class-name: ~"@{columns-name}-@{type}";
+  .@{col-class-name}-@{i}{
+    width: @i/@n*100%;
+    float: left;
+  }
+  // 偏移
+  .@{col-class-name}-offset-@{i}{
+    margin-left: @i/@n*100%;
+  }
+  // 排序
+  .@{col-class-name}-pull-@{i}{
+    right: @i/@n*100%;
+  }
+  .@{col-class-name}-push-@{i}{
+    left: @i/@n*100%;
+  }
+  .make-columns-loop(@type, @n, (@i + 1));
+}
+.make-columns-loop(xs, @grid-count);
+
+// 媒体查询
+.@{container}{
+  @media (max-width: @screen-sm-min) {
+    min-width: 0;
+  }
+  @media (min-width: @screen-sm-min) {
+    width: 750px;
+    min-width: 0;
+  }
+  @media (min-width: @screen-md-min) {
+    width: 970px;
+    min-width: 0;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: 1170px;
+    min-width: 0;
+  }
+}
+// 媒体查询设置对应列类型css
+@media (min-width: @screen-sm-min) {
+  .make-columns-loop(sm, @grid-count);
+}
+@media (min-width: @screen-md-min) {
+  .make-columns-loop(md, @grid-count);
+}
+@media (min-width: @screen-lg-min) {
+  .make-columns-loop(lg, @grid-count);
+}

@@ -8,49 +8,70 @@
     </el-breadcrumb>
   </div>  
   
-<m-box>
-  <m-demo>
-    <p>alert</p>
-    <m-alert>alert</m-alert>
-  </m-demo>
-</m-box>
+<div class="info-box">
+  <div class="info-centent">
+    <div class="info-header"><img src="../assets/logo.png" class="info-logo"></div>
+    <h1 class="info-title">Administrator</h1>
+    <p class="text-center">专注网站技术</p>
+    <div class="text-center" style="margin-top: 30px">
+      <m-button type="info" round><i class="fa fa-github"></i>&nbsp;Github</m-button>
+      <m-button type="success" round plain><i class="fa fa-code"></i>&nbsp;My blog</m-button>
+    </div>
+  </div>
+</div>
 
+<div style="height: 2000px"></div>
+
+<m-loader src="/static/config.js" script mount="jQuery" ></m-loader>
+<m-loader src="/static/test.css"></m-loader>
 
 </div>
 </template>
-
-<script>
-// import Vue from 'vue'
-const MDemo = {
-  porps: {
-    text: String
-  },
-  created () {
-    // console.log(this.$extend)
-  },
-  render (h) {
-    // console.log(this.$slots.default)
-    // var Com = Vue.extend({
-    //   template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
-    //   data: function () {
-    //     return {
-    //       firstName: 'Walter',
-    //       lastName: 'White',
-    //       alias: 'Heisenberg'
-    //     }
-    //   }
-    // })
-    // var elem = document.createElement('div')
-    // console.log(elem.appendChild)
-    // document.body.appendChild(elem)
-    // window.demo = new Com().$mount(elem)
-    // return ''
-    return null
+<style>
+  .info-centent,
+  .info-box{
+    margin: 0 auto;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
   }
-}
-export default {
-  components: {
-    MDemo
+  .info-box{
+    margin-top: 100px;
   }
-}
-</script>
+  .info-box:before,
+  .info-box:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inherit;
+    border-radius: inherit;
+    transform: rotate(3deg);
+    background: inherit;
+    opacity: .9;
+  }
+  .info-box:before{
+    transform: rotate(-6deg);
+    top: -2px;
+    left: -2px;
+  }
+  .info-centent{
+    position: absolute;
+    z-index: 100;
+    padding: 30px 15px;
+    box-sizing: border-box;
+  }
+  .info-header{
+    text-align: center;
+  }
+  .info-logo{
+    width: 100px;
+  }
+  .info-title {
+    text-align: center;
+    font-weight: 100;
+  }
+</style>

@@ -24,13 +24,20 @@ export default new Router({
         {path: '/keyboard', name: 'c-keyboard', component: page('c-keyboard')},
         {path: '/loading', name: 'c-loading', component: page('c-loading')},
         {path: '/data-table', name: 'p-data-table', component: page('table')},
-        {path: '/demo', component: page('demo')}
+        {path: '/dropdown', name: 'c-dropdown', component: page('c-dropdown')},
+        {path: '/navbar', name: 'c-navbar', component: page('c-navbar')},
+        {path: '/container', name: 'c-container', component: page('c-container')},
+        {path: '/demo', name: 'demo', component: page('demo')},
+        {path: '/404', name: '404', component: page('404')},
+        {path: '/500', name: '500', component: page('500')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
+    {path: '/cnode', name: 'cnode', component: page('cnode')},
     // pages
     {path: '/home-login', name: 'p-login', component: page('home-login')},
     {path: '/register', name: 'p-register', component: page('register')},
-    {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')}
+    {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')},
+    {path: '*', redirect: {name: '404'}}
   ]
 })

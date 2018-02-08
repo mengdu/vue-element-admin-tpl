@@ -1,9 +1,9 @@
 const menus = [
-  {id: '0', label: '控制面板', path: '/', icon: 'fa fa-home'},
+  {id: '0', label: '控制面板', path: '/', icon: 'fa fa-dashboard'},
   {
     id: 'components',
     icon: 'fa fa-microchip',
-    label: 'Components 组件',
+    label: '组件',
     submenu: [
       ['Form 表单', [
         {id: 'f1', name: 'c-button', label: 'Button 按钮', icon: 'fa fa-hand-o-up'},
@@ -16,20 +16,26 @@ const menus = [
       ['Notice', [
         {id: 'n1', name: 'c-alert', label: 'Alert 警告', icon: 'fa fa-info'},
         {id: 'n2', name: 'c-loading', label: 'Loading 加载', icon: 'fa fa-circle-o-notch'}
+      ]],
+      ['Other', [
+        {id: 'c-dropdown', name: 'c-dropdown', label: 'Dropdown'},
+        {id: 'c-navbar', name: 'c-navbar', label: 'Navbar'},
+        {id: 'c-container', name: 'c-container', label: '栅格布局'}
       ]]
     ]
   },
   {
     id: 'pages',
-    icon: 'fa fa-pied-piper',
+    icon: 'fa fa-circle-o',
     label: 'Pages 页面',
     submenu: [
       {id: 'p-data-table', name: 'p-data-table', label: 'Table 表格数据'},
+      {id: 'cnode', name: 'cnode', label: 'Cnode社区'},
       {id: 'p1', name: 'login', label: 'Login 登录'},
       {id: 'p2', name: 'p-login', label: 'Login 登录2'},
       {id: 'p3', name: 'p-register', label: 'Register 注册'},
-      {id: 'p4', path: '/404', label: '404'},
-      {id: 'p5', path: '/500', label: '500'}
+      {id: '400', path: '/404', label: '404'},
+      {id: '500', path: '/500', label: '500'}
     ]
   },
   {

@@ -10,17 +10,47 @@
 + 使用了 `FontAwesome 4.7.0` 的图标
 
 
-> `src/m` 目录下收藏了些本人工作时开发的一些组件，欢迎使用与提建议；使用方法请看对应的README.md说明文档。
 
+> `src/m` 目录下收藏了些本人工作时开发的一些组件，欢迎使用与提建议；使用方法请看对应的README.md说明文档。
 
 > 注：布局采用了 `display:flex` 实现，在IE上可能会出现一些不愉快的事情。
 
+
+## 实现组件
+
++ [按钮组件](src/m/button)
++ [多选框](src/m/checkbox)
++ [switch](src/m/switch)
++ [输入框](src/m/input)
++ [导航](src/m/navbar)
++ [dropdown](src/m/dropdown)
++ [响应式布局](src/m/container)
++ [加载等待](src/m/loading)
++ [提示](src/m/alert)
++ [回到到顶部](src/m/back-top)
++ [盒子](src/m/box)
++ [列表组](src/m/list-group)
++ [虚拟键盘（中/英）](src/m/keyboard)
++ [虚拟数字键盘](src/m/number-keyboard)
+
+
+## 页面
+
++ [登录](http://vadmin.lanyueos.com/login)
++ [注册](http://vadmin.lanyueos.com/register)
++ [404](http://vadmin.lanyueos.com/404)
++ [500](http://vadmin.lanyueos.com/500)
+
++ [cnode](http://vadmin.lanyueos.com/cnode)
+
+
 ## 截图
+
+![截图](2018-02-08_231542.png)
 
 ![截图](20180117171004.png)
 
 ![截图](20180117170917.png)
-
 
 
 ## 关于打包

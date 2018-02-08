@@ -5,6 +5,9 @@
   :default-active="defaultActive"
   :menus="menus"
   router
+  :background-color="theme.backgroundColor"
+  :text-color="theme.textColor"
+  :active-text-color="theme.activeTextColor"
   ></v-menu>
 
 
@@ -14,7 +17,8 @@ import VMenu from './vmenu'
 import menus from './menus'
 export default {
   props: {
-    collapse: Boolean
+    collapse: Boolean,
+    theme: Object
   },
   components: {
     VMenu

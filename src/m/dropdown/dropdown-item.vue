@@ -3,35 +3,56 @@
 </style>
 <template>
 <li class="m-dropdown-item"
-  :class="{'is-disabled': disabled}"
-  @click.stop="itemHandleClick"
-  ><slot></slot></li>
+  :class="{'disabled': disabled, active}"
+  :disabled="disabled"
+  @click.stop="handleClick"
+  >
+  <router-link :to="{name, path}" v-if="name || path && !disabled">
+    <slot></slot>
+  </router-link>
+  <template v-else>
+    <slot></slot>
+  </template>
+  </li>
 </template>
 
 <script type="text/javascript">
 export default {
   name: 'MDropdownItem',
   props: {
-    command: {
+    name: String,
+    path: String,
+    cmd: {
       type: String
     },
     disabled: {
       type: Boolean,
       default: false
     },
+    active: Boolean,
     offClick: {
       type: Boolean,
       default: false
     }
   },
-  methods: {
-    itemHandleClick (e) {
-      if (this.offClick) return
-      if (e.target.getAttribute('disabled')) return
-      let dropdown = this.$parent.$parent
-      dropdown.$emit('command', this.command)
-      dropdown.close()
+  data () {
+    return {
+      dropdown: null
     }
+  },
+  methods: {
+    handleClick (e) {
+      if (this.disabled) return false
+      if (this.offClick) {
+        this.dropdown.$emit('command', this.cmd)
+        return false
+      }
+      this.dropdown.$emit('command', this.cmd)
+      this.dropdown.close()
+    }
+  },
+  created () {
+    this.dropdown = this.$parent.$parent
   }
 }
 </script>

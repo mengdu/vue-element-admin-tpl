@@ -52,7 +52,8 @@ export default {
     listener: {
       type: Boolean,
       default: true
-    }
+    },
+    lang: String
   },
   data () {
     return {
@@ -62,7 +63,7 @@ export default {
       mathResult: null,
       pageSize: this.candidateLen,
       currentPage: 1,
-      langType: 'zh'
+      langType: this.lang || 'zh'
     }
   },
   watch: {
