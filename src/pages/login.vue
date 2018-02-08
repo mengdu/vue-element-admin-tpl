@@ -89,15 +89,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background-image: url(http://oogfn666s.bkt.clouddn.com/52746047c7a81a0dd797a2bf1ca91e98.png);*/
-    /*background-size: cover;*/
   }
   .login-box{
     position: relative;
     width: 330px;
     margin: 0 auto;
-    /*margin-top: -250px;*/
-    /*top: 45%;*/
     padding: 0px 15px;
   }
   .login-box .logo{

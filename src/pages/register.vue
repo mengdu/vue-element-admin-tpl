@@ -1,6 +1,6 @@
 <template>
 <div class="fullscreen">
-  <div class="login-box">
+  <div class="register-box">
     <div style="text-align: center">
       <img src="../assets/logo.png" alt="" class="logo">
     </div>
@@ -52,33 +52,32 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    /*background-image: url(http://oogfn666s.bkt.clouddn.com/52746047c7a81a0dd797a2bf1ca91e98.png);*/
-    /*background-size: cover;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .login-box{
+  .register-box{
     position: relative;
     width: 330px;
     margin: 0 auto;
-    margin-top: -250px;
-    top: 45%;
     padding: 0px 15px;
   }
-  .login-box .logo{
+  .register-box .logo{
     max-width: 40%;
     margin-bottom: 30px;
   }
-  .login-box .text-tips{
+  .register-box .text-tips{
     text-align: center;
     color: #909DB7;
   }
-  .login-box .m-input{
+  .register-box .m-input{
     width: 100%;
     padding: 10px;
     border: none;
     outline: none;
     box-sizing: border-box;
   }
-  .login-box .m-btn{
+  .register-box .m-btn{
     font-size: 18px;
     width: 100%;
     color: #fff;
@@ -95,21 +94,21 @@ export default {
     box-sizing: border-box;
     text-decoration: none;
   }
-  .login-box .m-btn.m-btn-text{
+  .register-box .m-btn.m-btn-text{
     background: #fff;
     color: #1bbd70;
   }
-  .login-box .m-btn:hover{
+  .register-box .m-btn:hover{
     background-color: #15A25F;
   }
-  .login-box .m-btn.m-btn-text:hover{
+  .register-box .m-btn.m-btn-text:hover{
     background-color: #F4F5F5;
   }
-  .login-box .m-btn:active{
+  .register-box .m-btn:active{
     opacity: 0.8;
   }
   @media (max-width: 768px) {
-    .login-box{
+    .register-box{
       width: auto;
     }
   }
