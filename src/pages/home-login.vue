@@ -1,6 +1,6 @@
 <template>
 <div class="fullscreen">
-  <div class="login-box">
+  <div class="home-login-box">
     <div style="text-align: center">
       <img src="../assets/logo.png" alt="" class="logo">
     </div>
@@ -29,7 +29,6 @@
 </div>
 </template>
 <script>
-// import {mapActions} from 'vuex'
 export default {
   name: 'login',
   data () {
@@ -40,22 +39,7 @@ export default {
     }
   },
   methods: {
-    // ...mapActions(['login', 'token']),
-    handleLogin () {
-      // this.token()
-      // this.isLoging = true
-      // this.login({name: this.name, pass: this.pass}).then(res => {
-      //   console.log(res)
-      //   this.$message({
-      //     type: res.bool ? 'success' : 'warning',
-      //     message: res.msg
-      //   })
-      //   if (res.bool) {
-      //     this.$router.push('/')
-      //   }
-      //   this.isLoging = false
-      // })
-    }
+    handleLogin () {}
   }
 }
 </script>
@@ -81,33 +65,32 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    /*background-image: url(http://oogfn666s.bkt.clouddn.com/52746047c7a81a0dd797a2bf1ca91e98.png);*/
-    /*background-size: cover;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .login-box{
+  .home-login-box{
     position: relative;
     width: 330px;
     margin: 0 auto;
-    margin-top: -250px;
-    top: 45%;
     padding: 0px 15px;
   }
-  .login-box .logo{
+  .home-login-box .logo{
     max-width: 40%;
     margin-bottom: 30px;
   }
-  .login-box .text-tips{
+  .home-login-box .text-tips{
     text-align: center;
     color: #909DB7;
   }
-  .login-box .m-input{
+  .home-login-box .m-input{
     width: 100%;
     padding: 10px;
     border: none;
     outline: none;
     box-sizing: border-box;
   }
-  .login-box .m-btn{
+  .home-login-box .m-btn{
     font-size: 18px;
     width: 100%;
     color: #fff;
@@ -124,21 +107,21 @@ export default {
     box-sizing: border-box;
     text-decoration: none;
   }
-  .login-box .m-btn.m-btn-text{
+  .home-login-box .m-btn.m-btn-text{
     background: #fff;
     color: #36C1FA;
   }
-  .login-box .m-btn:hover{
+  .home-login-box .m-btn:hover{
     background-color: #2DB7F5;
   }
-  .login-box .m-btn.m-btn-text:hover{
+  .home-login-box .m-btn.m-btn-text:hover{
     background-color: #F4F5F5;
   }
-  .login-box .m-btn:active{
+  .home-login-box .m-btn:active{
     opacity: 0.8;
   }
   @media (max-width: 768px) {
-    .login-box{
+    .home-login-box{
       width: auto;
     }
   }
