@@ -17,6 +17,9 @@
 
 <m-back-top></m-back-top>
 
+<m-loader src="/static/config.js" script mount="jQuery" ></m-loader>
+<m-loader src="/static/test.css"></m-loader>
+
 </div>
 </template>
 

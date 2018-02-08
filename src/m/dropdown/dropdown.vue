@@ -43,7 +43,8 @@ export default {
     close () {
       this.isOpen = false
     },
-    handleClick () {
+    handleClick (e) {
+      // console.log(e, this.isOpen)
       this.isOpen = !this.isOpen
     },
     handleOver () {
