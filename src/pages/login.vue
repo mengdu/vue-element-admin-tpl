@@ -32,7 +32,7 @@ export default {
   name: 'login',
   data () {
     return {
-      username: 'Administor',
+      username: 'Administrator',
       password: '123456',
       isLoging: false,
       author: window.APP_INFO.author,

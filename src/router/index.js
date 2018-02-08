@@ -26,10 +26,10 @@ export default new Router({
         {path: '/data-table', name: 'p-data-table', component: page('table')},
         {path: '/dropdown', name: 'c-dropdown', component: page('c-dropdown')},
         {path: '/navbar', name: 'c-navbar', component: page('c-navbar')},
+        {path: '/container', name: 'c-container', component: page('c-container')},
         {path: '/demo', name: 'demo', component: page('demo')},
         {path: '/404', name: '404', component: page('404')},
-        {path: '/500', name: '500', component: page('500')},
-        {path: '/*', redirect: {name: '404'}}
+        {path: '/500', name: '500', component: page('500')}
       ]
     },
     {path: '/login', name: 'login', component: page('login')},
@@ -37,6 +37,7 @@ export default new Router({
     // pages
     {path: '/home-login', name: 'p-login', component: page('home-login')},
     {path: '/register', name: 'p-register', component: page('register')},
-    {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')}
+    {path: '/keyboard', name: 'p-keyboard', component: page('c-keyboard')},
+    {path: '*', redirect: {name: '404'}}
   ]
 })
