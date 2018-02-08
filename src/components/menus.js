@@ -20,7 +20,7 @@ const menus = [
       ['Other', [
         {id: 'c-dropdown', name: 'c-dropdown', label: 'Dropdown'},
         {id: 'c-navbar', name: 'c-navbar', label: 'Navbar'},
-        {id: 'c-container', name: 'c-container', label: 'container'}
+        {id: 'c-container', name: 'c-container', label: '栅格布局'}
       ]]
     ]
   },

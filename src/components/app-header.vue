@@ -98,6 +98,7 @@ export default {
     themeType (val) {
       this.theme = this.themes.find(e => e.name === val) || {}
       this.$emit('set-theme', this.theme)
+      localStorage.setItem('theme', val)
     }
   },
   methods: {
@@ -122,6 +123,8 @@ export default {
   },
   created () {
     this.getLoginUser()
+    var theme = localStorage.getItem('theme') || 'default'
+    this.themeType = theme
   }
 }
 </script>
