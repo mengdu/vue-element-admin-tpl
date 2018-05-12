@@ -42,13 +42,9 @@
 </el-menu-item-group>
 </template>
 <script type="text/javascript">
-import menuList from './chunk-2'
 export default {
   props: {
     menus: Array
-  },
-  components: {
-    menuList
   },
   methods: {
     isArr (v) {

@@ -5,6 +5,18 @@ const menus = [
     icon: 'fa fa-microchip',
     label: '组件',
     submenu: [
+      {
+        id: 'test',
+        label: '二级测试',
+        icon: 'fa fa-hand-o-up',
+        submenu: [
+          {
+            id: 'test',
+            label: '二级测试',
+            icon: 'fa fa-hand-o-up'
+          }
+        ]
+      },
       ['Form 表单', [
         {id: 'f1', name: 'c-button', label: 'Button 按钮', icon: 'fa fa-hand-o-up'},
         {id: 'f2', name: 'c-switch', label: 'Switch 开关', icon: 'fa fa-square-o'},
