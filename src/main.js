@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { isProd } from './utils'
+import './assets/css/main.less'
 
 Vue.config.productionTip = false
 

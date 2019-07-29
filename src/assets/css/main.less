@@ -1,0 +1,42 @@
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  color: #292c38;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "PingFang SC","Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+}
+
+a {
+  color: #4394FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #6f76d9;
+  }
+}
+
+.m-link-effect {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 0px;
+    border-bottom: solid 1px;
+    bottom: -2px;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: 0;
+    right: 0;
+  }
+
+  &:hover {
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
