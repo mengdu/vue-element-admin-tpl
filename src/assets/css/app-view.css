@@ -19,10 +19,32 @@
 }
 .app-layout .app-header {
   background-color: #fff;
+  height: 58px;
 }
 .app-layout .app-footer {
   background-color: #fff;
   border-top: solid 1px #E2E3E4;
+}
+.app-aside .app-logo-box {
+  box-sizing: border-box;
+  height: 58px;
+  line-height: 58px;
+  padding: 0 15px;
+  color: #fff;
+  overflow: hidden;
+  transition: padding 0.2s ease;
+  background-color: #1B8CE1;
+  background-image: linear-gradient(20deg, #1C60E7 -20%, #1B8CE1);
+}
+.app-aside .app-logo-box .app-logo {
+  height: 45px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.app-aside .app-logo-box .app-name {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  font-weight: bold;
 }
 .app-sider-control {
   width: 0px;
