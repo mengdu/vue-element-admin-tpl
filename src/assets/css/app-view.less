@@ -1,0 +1,128 @@
+
+.app-layout {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f4f7;
+
+  .app-sider {
+    background-color: #19202E;
+    color: #8C96A9;
+    width: 240px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &.is-moving {
+      transition: none;
+    }
+
+    &.is-close {
+      width: 0;
+      padding: 0;
+    }
+  }
+
+  .app-header {
+    background-color: #fff;
+  }
+
+  .app-footer {
+    background-color: #fff;
+    border-top: solid 1px #E2E3E4;
+  }
+}
+
+.app-sider-control {
+  width: 0px;
+  position: relative;
+  cursor: ew-resize;
+
+  .collapse-btn {
+    position: absolute;
+    top: calc(50% - 18px);
+    height: 36px;
+    color: transparent;
+    width: 24px;
+    left: -1px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    z-index: 1000;
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: rgb(76, 154, 255);
+      width: 2px;
+      height: 8px;
+      position: absolute;
+      left: 8px;
+      opacity: 0;
+      transform: rotate(0deg);
+      border-radius: 16px;
+      transition: transform 200ms ease-in-out 0s, opacity 300ms ease-in-out 200ms;
+    }
+    &::before {
+      top: 10px;
+      transform-origin: 1px 7px 0px;
+    }
+    &::after {
+      top: 16px;
+      transform-origin: 1px 1px 0px;
+    }
+    &:hover {
+      &::before {
+        transform: rotate(40deg);
+      }
+      &::after {
+        transform: rotate(-40deg);
+      }
+    }
+    &.close {
+      &::before,
+      &::after {
+        left: 11px;
+      }
+      &:hover {
+        &::before {
+          transform: rotate(-40deg);
+        }
+        &::after {
+          transform: rotate(40deg);
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 100%;
+    background-color: transparent;
+    right: -7px;
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 2px;
+    left: 0px;
+    top: 0;
+    position: absolute;
+    transition: background-color 300ms ease-in-out 200ms;
+  }
+
+  &:hover {
+    .collapse-btn {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:hover:before {
+    background: rgb(76, 154, 255);
+  }
+}
