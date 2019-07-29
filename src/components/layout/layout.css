@@ -1,0 +1,28 @@
+.m-layout {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+.m-layout.is-horizontal {
+  flex-direction: row;
+}
+.m-layout .m-layout-sider {
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.m-layout .m-layout-header {
+  height: 50px;
+  box-sizing: border-box;
+}
+.m-layout .m-layout-content {
+  flex: 1;
+  min-height: 0;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.m-layout .m-layout-footer {
+  height: 50px;
+  box-sizing: border-box;
+}
