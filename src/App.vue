@@ -1,11 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <MainView />
   </div>
 </template>
 
 <script>
+import MainView from './components/main-view'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    MainView
+  }
 }
 </script>
