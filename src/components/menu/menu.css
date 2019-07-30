@@ -1,0 +1,57 @@
+.m-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.m-menu .m-menu-item .m-menu-item--icon {
+  margin-right: 10px;
+}
+.m-menu .m-group {
+  margin-bottom: 10px;
+}
+.m-menu .m-group .m-group--item {
+  line-height: 25px;
+  padding: 0 10px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+.m-menu .m-submenu .m-menu {
+  padding-left: 1rem;
+}
+.m-menu .m-submenu .m-submenu--item .m-submenu--icon {
+  margin-right: 10px;
+}
+.m-menu .m-submenu .m-submenu--arrow-down-icon {
+  width: 20px;
+  color: inherit;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -10px;
+  transition: transform 0.2s linear;
+  line-height: 0;
+}
+.m-menu .m-menu-item .m-menu-item--link,
+.m-menu .m-submenu .m-submenu--item {
+  line-height: 40px;
+  display: block;
+  padding: 0 15px;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  position: relative;
+}
+.m-menu .m-menu-item .m-menu-item--link:hover,
+.m-menu .m-submenu .m-submenu--item:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.m-menu .m-menu-item .m-menu-item--link .fa-external-link {
+  font-size: 12px;
+  margin-left: 5px;
+}
+.m-menu .m-menu-line {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 15px 10px;
+}
