@@ -4,6 +4,8 @@
   padding: 0;
 
   .m-menu-item {
+    width: 100%;
+
     .m-menu-item--icon {
       margin-right: 10px;
     }
@@ -68,5 +70,18 @@
     height: 1px;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 15px 10px;
+  }
+
+  &.m-menu--light {
+    .m-menu-item .m-menu-item--link,
+    .m-submenu .m-submenu--item {
+      &:hover {
+        color: #283946;
+        background-color: rgba(82, 145, 193, 0.07);
+      }
+    }
+    .m-menu-line {
+      background-color: rgba(40,57,70, 0.1);
+    }
   }
 }

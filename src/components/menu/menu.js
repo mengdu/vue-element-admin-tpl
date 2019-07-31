@@ -68,12 +68,13 @@ export default {
       default () {
         return []
       }
-    }
+    },
+    theme: String
   },
 
   render (h) {
     return (
-      <ul class="m-menu">
+      <ul class={[ 'm-menu', this.theme && 'm-menu--' + this.theme ]}>
         {this.menus.map(item => {
           return renderItem(h, item)
         })}
