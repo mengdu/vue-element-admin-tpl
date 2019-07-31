@@ -261,6 +261,15 @@
 .app-header-box .app-header-tool .m-css-dropdown-panel {
   min-width: 200px;
   border-radius: 0 0 3px 3px;
+  margin-left: -10px;
+}
+.app-header-box .app-header-tool .m-dropdown-panel.is-center,
+.app-header-box .app-header-tool .m-css-dropdown-panel.is-center {
+  margin-left: 0px;
+}
+.app-header-box .app-header-tool .m-dropdown-panel.is-right,
+.app-header-box .app-header-tool .m-css-dropdown-panel.is-right {
+  margin-right: -10px;
 }
 .app-header-box .app-header-tool .m-dropdown-panel::-webkit-scrollbar,
 .app-header-box .app-header-tool .m-css-dropdown-panel::-webkit-scrollbar {
