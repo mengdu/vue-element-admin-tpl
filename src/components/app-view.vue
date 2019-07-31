@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { MContainer, MMain, MHeader, MSider, MFooter } from './layout'
+import { MContainer, MMain, MHeader, MSider } from './layout'
 import AppAside from './app-aside'
 import AppHeader from './app-header'
 
@@ -43,7 +43,6 @@ export default {
     MMain,
     MHeader,
     MSider,
-    MFooter,
     AppAside,
     AppHeader
   },

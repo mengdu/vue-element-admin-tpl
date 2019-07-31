@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/home'
+import Login from './views/login'
 import AppView from './components/app-view'
 import Dashboard from './views/admin/dashboard'
 import Pgae1 from './views/admin/page1'
@@ -13,6 +14,7 @@ const router = new Router({
   mode: 'history', // hash, history
   routes: [
     { path: '/', component: Home },
+    { path: '/login', component: Login },
     {
       path: '/admin',
       component: AppView,
