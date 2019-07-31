@@ -8101,6 +8101,16 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-m-dialog@^1.2.1:
+  version "1.2.1"
+  resolved "https://r.cnpmjs.org/vue-m-dialog/download/vue-m-dialog-1.2.1.tgz#6541059a1f6e9d6293cc357fe33d6a3775d88cd7"
+  integrity sha1-ZUEFmh9unWKTzDV/4z1qN3XYjNc=
+
+vue-m-message@^2.0.0:
+  version "2.0.0"
+  resolved "https://r.cnpmjs.org/vue-m-message/download/vue-m-message-2.0.0.tgz#15fe9fa52a6d2497a996757f7d7582290a8486ef"
+  integrity sha1-Ff6fpSptJJeplnV/fXWCKQqEhu8=
+
 vue-router@^3.0.7:
   version "3.0.7"
   resolved "https://r.cnpmjs.org/vue-router/download/vue-router-3.0.7.tgz#b36ca107b4acb8ff5bc4ff824584059c23fcb87b"

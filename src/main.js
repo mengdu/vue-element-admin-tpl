@@ -3,9 +3,19 @@ import Nprogress from 'nprogress'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Message from 'vue-m-message'
+import MDialog from 'vue-m-dialog/dist'
 import { isProd } from './utils'
-import './assets/css/main.less'
 import 'nprogress/nprogress.css'
+import 'vue-m-dialog/dist/css/default.css'
+import './assets/css/main.less'
+
+Vue.use(Message, { name: 'msg' }) // mount `Vue.prototype.$msg`
+Vue.use(MDialog, {
+  dialogName: 'm-dialog',
+  alertName: 'malert',
+  confirmName: 'mconfirm'
+})
 
 Vue.config.productionTip = false
 
