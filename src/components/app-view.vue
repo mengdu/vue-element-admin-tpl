@@ -22,7 +22,11 @@
     </m-sider>
     <m-container>
       <m-header class="app-header"><AppHeader /></m-header>
-      <m-main class="app-content"><router-view /></m-main>
+      <m-main class="app-content">
+        <transition appear name="m-page" mode="out-in">
+          <router-view />
+        </transition>
+      </m-main>
       <!-- <m-footer class="app-footer">footer</m-footer> -->
     </m-container>
   </m-container>

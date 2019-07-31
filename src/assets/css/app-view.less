@@ -30,9 +30,44 @@
     padding: 0 15px;
   }
 
+  .app-content {
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .app-footer {
     background-color: #fff;
     border-top: solid 1px #E2E3E4;
+  }
+
+  .m-page-enter-active {
+    animation: page-in .3s;
+  }
+  .m-page-leave-active {
+    animation: page-out .3s;
+  }
+  
+  @keyframes page-in {
+    0% {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes page-out {
+    0% {
+      transform: translateX(0,0,0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(20px);
+      opacity: 0;
+    }
   }
 }
 
@@ -275,6 +310,8 @@
     .m-dropdown-panel,
     .m-css-dropdown-panel {
       min-width: 200px;
+      border-radius: 0 0 3px 3px;
+
       &::-webkit-scrollbar {
         width: 0px;
         height: 0px;

@@ -25,9 +25,40 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
   padding: 0 15px;
 }
+.app-layout .app-content {
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 .app-layout .app-footer {
   background-color: #fff;
   border-top: solid 1px #E2E3E4;
+}
+.app-layout .m-page-enter-active {
+  animation: page-in 0.3s;
+}
+.app-layout .m-page-leave-active {
+  animation: page-out 0.3s;
+}
+@keyframes page-in {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes page-out {
+  0% {
+    transform: translateX(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
 }
 .app-aside .app-logo-box {
   box-sizing: border-box;
@@ -229,6 +260,7 @@
 .app-header-box .app-header-tool .m-dropdown-panel,
 .app-header-box .app-header-tool .m-css-dropdown-panel {
   min-width: 200px;
+  border-radius: 0 0 3px 3px;
 }
 .app-header-box .app-header-tool .m-dropdown-panel::-webkit-scrollbar,
 .app-header-box .app-header-tool .m-css-dropdown-panel::-webkit-scrollbar {
