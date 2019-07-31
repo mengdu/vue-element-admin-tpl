@@ -18,6 +18,7 @@ a {
   }
 }
 
+// 下划线效果链接
 .m-link-effect {
   position: relative;
 
@@ -38,6 +39,23 @@ a {
       left: 0;
       width: 100%;
     }
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.clearfix {
+  &::after,
+  &::before {
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 

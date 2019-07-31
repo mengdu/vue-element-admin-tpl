@@ -21,9 +21,9 @@
         ></button>
     </m-sider>
     <m-container>
-      <m-header class="app-header">header</m-header>
+      <m-header class="app-header"><AppHeader /></m-header>
       <m-main class="app-content"><router-view /></m-main>
-      <m-footer class="app-footer">footer</m-footer>
+      <!-- <m-footer class="app-footer">footer</m-footer> -->
     </m-container>
   </m-container>
 </template>
@@ -31,6 +31,7 @@
 <script>
 import { MContainer, MMain, MHeader, MSider, MFooter } from './layout'
 import AppAside from './app-aside'
+import AppHeader from './app-header'
 
 export default {
   components: {
@@ -39,7 +40,8 @@ export default {
     MHeader,
     MSider,
     MFooter,
-    AppAside
+    AppAside,
+    AppHeader
   },
   data () {
     return {
