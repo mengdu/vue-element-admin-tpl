@@ -1,6 +1,12 @@
 # vue-element-admin-tpl
 
+<div align="center">
+  <img src="src/assets/logo.svg" alt="logo" width="250" />
+</div>
+
 Template for admin platform base on `Vue` and `Element-UI`.
+
+> logo svg copy from https://fontawesome.com/icons/meetup?style=brands
 
 ## Project setup
 ```
