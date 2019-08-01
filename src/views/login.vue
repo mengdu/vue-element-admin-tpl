@@ -11,10 +11,10 @@
       <form action="" class="login-form">
         <div class="m-list-group">
           <div class="m-list-group-item">
-            <input type="text" placeholder="Username" class="m-input" v-model="username">
+            <input type="text" placeholder="Username" class="m-input" name="username" v-model="username">
           </div>
           <div class="m-list-group-item">
-            <input type="password" placeholder="Password" class="m-input" v-model="password">
+            <input type="password" placeholder="Password" class="m-input" name="password" v-model="password">
           </div>
         </div>
         <p class="text-tips">免密码，点击登录按钮进入</p>
@@ -23,7 +23,7 @@
       <div style="margin-top: 50px"></div>
       <p class="text-tips">
         <i class="fa fa-meetup" style="color: #29ABE2"></i>&nbsp;
-        <span class="footer-text">{{appName}} &nbsp;<el-tag size="mini">{{version}}</el-tag> <br>©make by <a href="https://www.github.com/mengdu" target="_blank">{{author}}</a>
+        <span class="footer-text">{{appName}} &nbsp;<el-tag size="mini">{{version}}</el-tag> <br>©make by <a href="https://www.github.com/mengdu" target="_blank" class="m-link-effect">{{author}}</a>
     </span>
       </p>
     </div>
