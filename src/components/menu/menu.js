@@ -1,7 +1,7 @@
 import ArrowDownIcon from '../icon-arrow'
 import { MCollapseTransition } from '../collapse'
 
-function renderItem (h, item) {
+function renderItem (h, ctx, item) {
   if (item.type === 'line') return renderLine(h)
 
   if (item.type === 'group') {
@@ -11,7 +11,7 @@ function renderItem (h, item) {
           <span class="m-group--title">{item.label}</span>
         </div>
         <ul class="m-menu">
-          {item.items.map(e => renderItem(h, e))}
+          {item.items.map(e => renderItem(h, ctx, e))}
         </ul>
       </li>
     )
@@ -27,7 +27,7 @@ function renderItem (h, item) {
         </div>
         <MCollapseTransition appear={true}>
           <ul class="m-menu" v-show={item.open}>
-            {item.items.map(e => renderItem(h, e))}
+            {item.items.map(e => renderItem(h, ctx, e))}
           </ul>
         </MCollapseTransition>
       </li>
@@ -35,8 +35,8 @@ function renderItem (h, item) {
   }
 
   return (
-    <li class="m-menu-item" title={item.title}>
-      {renderLink(h, item, (
+    <li class={['m-menu-item', { active: ctx.currentActive === item.key }]} title={item.title}>
+      {renderLink(h, ctx, item, (
         [
           <i class={[ 'm-menu-item--icon', item.icon ]}></i>,
           <span class="m-menu-item--title">{item.label}</span>
@@ -46,13 +46,17 @@ function renderItem (h, item) {
   )
 }
 
-function renderLink (h, item, children) {
+function renderLink (h, ctx, item, children) {
   if (item.link) {
-    return <a class="m-menu-item--link" href={item.link} target={item.target}>{children}<i class="fa fa-external-link"></i></a>
+    return <a class="m-menu-item--link" href={item.link} target={item.target} title={item.title}>{children}<i class="fa fa-external-link"></i></a>
+  }
+
+  if (item.handle) {
+    return <a class="m-menu-item--link" href="javascript:void(0)" on-click={() => item.handle()} title={item.title}>{children}</a>
   }
 
   return (
-    <router-link to={item.path} class="m-menu-item--link">{children}</router-link>
+    <router-link to={item.path} class="m-menu-item--link" title={item.title}>{children}</router-link>
   )
 }
 
@@ -72,11 +76,19 @@ export default {
     theme: String
   },
 
+  data () {
+    return {
+      currentActive: ''
+    }
+  },
+
   render (h) {
+    const ctx = this
+
     return (
       <ul class={[ 'm-menu', this.theme && 'm-menu--' + this.theme ]}>
         {this.menus.map(item => {
-          return renderItem(h, item)
+          return renderItem(h, ctx, item)
         })}
       </ul>
     )

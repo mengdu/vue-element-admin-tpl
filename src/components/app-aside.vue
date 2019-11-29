@@ -30,9 +30,9 @@ const menus = [
     label: 'GROUP 2',
     type: 'group',
     items: [
-      { label: 'Content Manger', icon: 'fa fa-circle', path: '/test' },
+      { label: 'Content Manger', icon: 'fa fa-circle', path: '/test', title: 'This is title', key: 'test' },
       { label: 'Content Manger', icon: 'fa fa-bomb', path: '/test' },
-      { label: 'Content Manger', icon: 'fa fa-circle-o', path: '/test' }
+      { label: 'Nav Link', icon: 'fa fa-circle-o', handle () { console.log(arguments) } }
     ]
   },
   {

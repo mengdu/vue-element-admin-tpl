@@ -54,6 +54,9 @@
     cursor: pointer;
     transition: all 0.3s linear;
     position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     &:hover {
       color: #fff;
@@ -61,10 +64,21 @@
     }
   }
 
-  .m-menu-item .m-menu-item--link .fa-external-link {
-    font-size: 12px;
-    margin-left: 5px;
+  .m-menu-item {
+
+    &.active {
+      .m-menu-item--link {
+        color: #fff;
+        background-color: rgba(255,255,255, 0.1);
+      }
+    }
+
+    .m-menu-item--link .fa-external-link {
+      font-size: 12px;
+      margin-left: 5px;
+    }
   }
+
 
   .m-menu-line {
     height: 1px;

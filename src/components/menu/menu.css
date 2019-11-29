@@ -43,9 +43,16 @@
   cursor: pointer;
   transition: all 0.3s linear;
   position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .m-menu .m-menu-item .m-menu-item--link:hover,
 .m-menu .m-submenu .m-submenu--item:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.m-menu .m-menu-item.active .m-menu-item--link {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.1);
 }
