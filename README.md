@@ -1,12 +1,21 @@
 # vue-element-admin-tpl
 
+[Liev Demo](https://mengdu.github.io/vue-element-admin-tpl/dist/index.html)
+
 <div align="center">
   <img src="src/assets/logo.svg" alt="logo" width="250" />
 </div>
 
 Template for admin platform base on `Vue` and `Element-UI`.
 
-> logo svg copy from https://fontawesome.com/icons/meetup?style=brands
+
+## Project Demo
+
+1、**[Project Demo](http://www.lanyueos.com:3003/dist)**
+
+> username: admin, password: 123456
+
+![](./feihong_2019-12-20.png)
 
 ## Project setup
 ```
