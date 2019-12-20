@@ -1,6 +1,6 @@
 # vue-element-admin-tpl
 
-[Liev Demo](https://mengdu.github.io/vue-element-admin-tpl/dist/index.html)
+[Liev Demo](http://vadmin.lanyueos.com)
 
 <div align="center">
   <img src="src/assets/logo.svg" alt="logo" width="250" />
