@@ -1,6 +1,7 @@
 <template>
   <div class="m-dropdown"
     @click="handleClick"
+    ref="dropdown"
     >
     <slot></slot>
     <transition name="m-dropdown">
@@ -15,7 +16,6 @@
           margin: margin,
           ...panelStyle
         }"
-        @click.stop=""
         v-show="isOpen">
         <slot name="panel"></slot>
       </div>
@@ -24,6 +24,13 @@
 </template>
 
 <script>
+function hasEl (target, el) {
+  if (!target) return false
+  if (target === el) return true
+
+  return hasEl(target.parentNode, el)
+}
+
 export default {
   props: {
     trigger: {
@@ -44,7 +51,18 @@ export default {
   methods: {
     handleClick () {
       this.isOpen = !this.isOpen
+    },
+    handleDocClick (e) {
+      if (!hasEl(e.target, this.$refs.dropdown)) {
+        this.isOpen = false
+      }
     }
+  },
+  mounted () {
+    document.addEventListener('click', this.handleDocClick, false)
+  },
+  beforeDestroy () {
+    document.removeEventListener('click', this.handleDocClick)
   }
 }
 </script>
