@@ -11,7 +11,7 @@ import Pgae3 from './views/admin/page3'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history', // hash, history
+  mode: 'hash', // hash, history
   routes: [
     { path: '/', component: Home },
     { path: '/login', component: Login },
