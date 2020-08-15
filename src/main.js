@@ -7,9 +7,11 @@ import Message from 'vue-m-message'
 import MDialog from 'vue-m-dialog/dist'
 import ElementUI from 'element-ui'
 import { isProd } from './utils'
+import 'font-awesome/css/font-awesome.min.css'
 import 'nprogress/nprogress.css'
 import 'vue-m-dialog/dist/css/default.css'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@dove-ui/menu/dist/index.css'
 import './assets/css/main.less'
 
 Vue.use(Message, { name: 'msg' }) // mount `Vue.prototype.$msg`
@@ -40,4 +42,8 @@ const app = new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-window.app = isProd() ? undefined : app
+if (!isProd()) {
+  window.app = app
+}
+
+export default app

@@ -72,18 +72,18 @@
   background-image: linear-gradient(20deg, #1C60E7 -20%, #1B8CE1);
 }
 .app-aside .app-logo-box .app-logo {
-  height: 40px;
+  height: 35px;
   vertical-align: middle;
   margin-right: 10px;
   transition: all 0.3s ease;
 }
 .app-aside .app-logo-box .app-name {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   vertical-align: middle;
 }
 .app-aside .app-menu-box {
   width: 100%;
-  max-height: calc(42%);
+  max-height: calc(100% - 58px);
   overflow: auto;
   position: absolute;
   box-sizing: border-box;
@@ -91,22 +91,28 @@
   /*滚动轨道*/
   /*滚动条*/
 }
-.app-aside .app-menu-box::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
-  background: transparent;
+.app-aside .app-menu-box .menu-title {
+  font-size: 12px;
+  color: #5c6579;
+  padding: 10px;
 }
-.app-aside .app-menu-box::-webkit-scrollbar-corner {
-  background: transparent;
+.app-aside .app-menu-box .menu-item-icon {
+  margin-right: 7px;
 }
-.app-aside .app-menu-box::-webkit-resizer {
-  background: transparent;
+.app-aside .app-menu-box .menu-item-label {
+  margin-right: 10px;
 }
-.app-aside .app-menu-box::-webkit-scrollbar-track,
-.app-aside .app-menu-box::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background-clip: content-box;
-  border: solid 2px transparent;
+.app-aside .app-menu-box .menu-item-des {
+  opacity: 0.5;
+  font-size: 12px;
+}
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--row,
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--label {
+  transition: all 0.4s ease;
+}
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--row.is-hovered + .vc-menu-item--label,
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--row.is-clicked + .vc-menu-item--label {
+  color: #F5F5FA;
 }
 .app-aside .app-menu-box::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0.1);
@@ -116,7 +122,7 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 .app-aside .app-menu-box::-webkit-scrollbar-thumb:hover {
-  background-color: #5A6274;
+  background-color: rgba(255, 255, 255, 0.3);
   border-width: 1px;
 }
 .app-sider.is-mini .app-logo {
@@ -132,7 +138,7 @@
 }
 .app-sider-control .collapse-btn {
   position: absolute;
-  top: calc(32%);
+  top: calc(50% - 18px);
   height: 36px;
   color: transparent;
   width: 24px;
@@ -151,7 +157,7 @@
   height: 8px;
   position: absolute;
   left: 8px;
-  opacity: 0;
+  opacity: 0.3;
   transform: rotate(0deg);
   border-radius: 16px;
   transition: transform 200ms ease-in-out 0s, opacity 300ms ease-in-out 200ms;
@@ -214,14 +220,10 @@
   vertical-align: middle;
   line-height: 58px;
   padding: 0 10px;
-  cursor: pointer;
   font-size: 0.95rem;
   color: #515a6e;
   background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 0.3s linear;
-}
-.app-header-box .app-header-tool > li:hover {
-  background-color: rgba(40, 44, 52, 0.03);
 }
 .app-header-box .app-header-tool > li .tool-btn {
   border: none;

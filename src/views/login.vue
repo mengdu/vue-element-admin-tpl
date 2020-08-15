@@ -8,14 +8,12 @@
         </div>
       </div>
       <p class="text-tips">你好，欢迎登录</p>
-      <form action="" class="login-form">
-        <div class="m-list-group">
-          <div class="m-list-group-item">
-            <input type="text" placeholder="Username" class="m-input" name="username" v-model="username">
-          </div>
-          <div class="m-list-group-item">
-            <input type="password" placeholder="Password" class="m-input" name="password" v-model="password">
-          </div>
+      <form action="#" class="login-form">
+        <div class="login-form-item">
+          <input type="text" placeholder="Username" class="m-input" name="username" v-model="username">
+        </div>
+        <div class="login-form-item">
+          <input type="password" placeholder="Password" class="m-input" name="password" v-model="password">
         </div>
         <p class="text-tips">免密码，点击登录按钮进入</p>
         <button class="m-btn sub select-none" @click.prevent="handleLogin" v-loading="isLoging">登录</button>
@@ -59,27 +57,6 @@ export default {
 }
 </script>
 <style scoped>
-  .m-list-group {
-    border-radius: 3px;
-    padding: 0;
-    margin: 0 0 20px;
-  }
-  .m-list-group .m-list-group-item {
-    position: relative;
-    display: block;
-    padding: 6px 10px;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #e7ecee;
-  }
-  .m-list-group .m-list-group-item:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
-  .m-list-group .m-list-group-item:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
   .fullscreen {
     position: absolute;
     width: 100%;
@@ -91,7 +68,7 @@ export default {
   }
   .login-box {
     position: relative;
-    width: 330px;
+    width: 300px;
     margin: 0 auto;
     padding: 0px 15px;
   }
@@ -110,12 +87,19 @@ export default {
     text-align: center;
     color: #909DB7;
   }
+  .login-box .login-form-item {
+    margin-bottom: 10px;
+  }
+
   .login-box .m-input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     outline: none;
     box-sizing: border-box;
+    line-height: 25px;
+    box-shadow: 1px 1px 10px rgb(0,0,0,0.05);
+    border-radius: 3px;
   }
   .login-box .m-btn {
     font-size: 18px;

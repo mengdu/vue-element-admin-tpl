@@ -1,4 +1,3 @@
-@import url('../font-awesome-4.7.0/css/font-awesome.min.css');
 body {
   background-color: #fff;
   margin: 0;
@@ -12,9 +11,6 @@ a {
   color: #4394FF;
   text-decoration: none;
   transition: color 0.3s ease;
-}
-a:hover {
-  color: #6f76d9;
 }
 .m-link-effect {
   position: relative;
@@ -54,6 +50,37 @@ a:hover {
 }
 ::selection {
   background: #CBD1DE;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+::-webkit-resizer {
+  background: transparent;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-clip: content-box;
+  border: solid 2px transparent;
+  transition: all 0.3s ease;
+}
+/*滚动轨道*/
+::-webkit-scrollbar-track {
+  background-color: rgba(53, 59, 69, 0.1);
+}
+/*滚动条*/
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-color: rgba(53, 59, 69, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(53, 59, 69, 0.5);
+  border-width: 1px;
 }
 .app-layout {
   position: fixed;
@@ -140,7 +167,7 @@ a:hover {
 }
 .app-aside .app-menu-box {
   width: 100%;
-  max-height: calc(42%);
+  max-height: calc(100% - 58px);
   overflow: auto;
   position: absolute;
   box-sizing: border-box;
@@ -148,22 +175,21 @@ a:hover {
   /*滚动轨道*/
   /*滚动条*/
 }
-.app-aside .app-menu-box::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
-  background: transparent;
+.app-aside .app-menu-box .menu-item-icon {
+  margin-right: 7px;
 }
-.app-aside .app-menu-box::-webkit-scrollbar-corner {
-  background: transparent;
+.app-aside .app-menu-box .menu-item-label {
+  margin-right: 10px;
 }
-.app-aside .app-menu-box::-webkit-resizer {
-  background: transparent;
+.app-aside .app-menu-box .menu-item-des {
+  opacity: 0.5;
 }
-.app-aside .app-menu-box::-webkit-scrollbar-track,
-.app-aside .app-menu-box::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background-clip: content-box;
-  border: solid 2px transparent;
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--row,
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--label {
+  transition: all 0.4s ease;
+}
+.app-aside .app-menu-box .vc-menu-item .vc-menu-item--row.is-hovered + .vc-menu-item--label {
+  color: #F5F5FA;
 }
 .app-aside .app-menu-box::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0.1);
@@ -171,10 +197,6 @@ a:hover {
 .app-aside .app-menu-box::-webkit-scrollbar-thumb {
   min-height: 20px;
   background-color: rgba(255, 255, 255, 0.1);
-}
-.app-aside .app-menu-box::-webkit-scrollbar-thumb:hover {
-  background-color: #5A6274;
-  border-width: 1px;
 }
 .app-sider.is-mini .app-logo {
   width: 100%;
@@ -189,7 +211,7 @@ a:hover {
 }
 .app-sider-control .collapse-btn {
   position: absolute;
-  top: calc(32%);
+  top: calc(50% - 18px);
   height: 36px;
   color: transparent;
   width: 24px;

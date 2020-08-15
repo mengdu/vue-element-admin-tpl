@@ -11,7 +11,7 @@ import Pgae3 from './views/admin/page3'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'hash', // hash, history
+  mode: 'history', // hash, history
   routes: [
     { path: '/', component: Home },
     { path: '/login', component: Login },
@@ -19,10 +19,10 @@ const router = new Router({
       path: '/admin',
       component: AppView,
       children: [
-        { path: '', component: Dashboard, meta: { icon: 'fa fa-dashboard', label: 'Dashboard' } },
-        { path: '/page1', component: Pgae1, meta: { icon: 'fa fa-dashboard', label: 'Dashboard' } },
-        { path: '/page2', component: Pgae2, meta: { icon: 'fa fa-dashboard', label: 'Dashboard' } },
-        { path: '/page3', component: Pgae3, meta: { icon: 'fa fa-dashboard', label: 'Dashboard' } }
+        { path: '', component: Dashboard },
+        { path: '/page1', component: Pgae1 },
+        { path: '/page2', component: Pgae2 },
+        { path: '/page3', component: Pgae3 }
       ]
     }
   ]

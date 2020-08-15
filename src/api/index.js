@@ -1,5 +1,5 @@
-import Axios from 'axios'
+import user from './user'
 
-export default {
-  Axios
+export {
+  user
 }

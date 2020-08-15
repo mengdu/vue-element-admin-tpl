@@ -6,32 +6,41 @@
       <span class="app-name">Admin Platform</span>
     </div>
     <div class="app-menu-box">
-      <Menu :menus="menus" />
+      <!-- aside menu -->
+      <div class="menu-title"><i class="fa fa-bars"></i>&nbsp;APP MENU</div>
+      <VcMenu :menus="menus">
+        <template v-slot:item="menu">
+          <span v-if="menu.icon" :class="['menu-item-icon', menu.icon]"></span>
+          <span class="menu-item-label">{{menu.label}}</span>
+          <span v-if="menu.description" class="menu-item-des">{{menu.description}}</span>
+        </template>
+      </VcMenu>
     </div>
   </div>
 </template>
 
 <script>
-import Menu from './menu'
+// import Menu from './menu'
+import VcMenu from '@dove-ui/menu'
 
 const menus = [
-  { label: 'Dashboard', icon: 'fa fa-dashboard', path: '/admin' },
-  { label: 'Introduce', icon: 'fa fa-dot-circle-o', path: '/page1' },
+  { label: 'Dashboard', icon: 'fa fa-dashboard', router: '/admin', name: '1', description: 'Home' },
+  { label: 'Introduce', icon: 'fa fa-dot-circle-o', router: '/page1', name: '2', description: 'e.g' },
   {
     label: 'GROUP 1',
-    type: 'group',
-    items: [
-      { label: 'User Manger', icon: 'fa fa-user-md', path: '/page1' },
-      { label: 'Permission Manger', icon: 'fa fa-tasks', path: '/page2' },
-      { label: 'Group Manger', icon: 'fa fa-group', path: '/page3' }
+    group: true,
+    children: [
+      { label: 'User Manger', icon: 'fa fa-user-md', router: '/page1' },
+      { label: 'Permission Manger', icon: 'fa fa-tasks', router: '/page2' },
+      { label: 'Group Manger', icon: 'fa fa-group', router: '/page3' }
     ]
   },
   {
     label: 'GROUP 2',
-    type: 'group',
-    items: [
-      { label: 'Content Manger', icon: 'fa fa-circle', path: '/test', title: 'This is title', key: 'test' },
-      { label: 'Content Manger', icon: 'fa fa-bomb', path: '/test' },
+    group: true,
+    children: [
+      { label: 'Content Manger', icon: 'fa fa-circle', router: '/test', title: 'This is title', key: 'test' },
+      { label: 'Post Manger', icon: 'fa fa-bomb', router: '/test' },
       { label: 'Nav Link', icon: 'fa fa-circle-o', handle () { console.log(arguments) } }
     ]
   },
@@ -40,19 +49,20 @@ const menus = [
     type: 'submenu',
     open: true,
     icon: 'fa fa-folder-open',
-    items: [
-      { label: 'Submenu 1', icon: 'fa fa-file-image-o', path: '/test' },
-      { label: 'Submenu 2', icon: 'fa fa-book', path: '/test' },
+    children: [
+      { label: 'Submenu 1', icon: 'fa fa-file-image-o', router: '/test' },
+      { label: 'Submenu 2', icon: 'fa fa-book', router: '/test' },
       { type: 'line' },
-      { label: 'Submenu 3', icon: 'fa fa-file-word-o', path: '/test' },
+      { label: 'Submenu 3', icon: 'fa fa-file-word-o', router: '/test' },
       {
         label: 'Submenu',
         type: 'submenu',
         open: false,
-        items: [
-          { label: 'Submenu 1', icon: 'fa fa-book', path: '/test' },
-          { label: 'Submenu 2', icon: 'fa fa-book', path: '/test' },
-          { label: 'Submenu 3', icon: 'fa fa-book', path: '/test' }
+        icon: 'fa fa-folder-open',
+        children: [
+          { label: 'Submenu 1', icon: 'fa fa-book', router: '/test' },
+          { label: 'Submenu 2', icon: 'fa fa-book', router: '/test' },
+          { label: 'Submenu 3', icon: 'fa fa-book', router: '/test', name: 'test' }
         ]
       }
     ]
@@ -64,7 +74,7 @@ const menus = [
 ]
 
 export default {
-  components: { Menu },
+  components: { VcMenu },
   data () {
     return {
       menus

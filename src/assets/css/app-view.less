@@ -84,14 +84,14 @@
     background-image: linear-gradient(20deg, #1C60E7 -20%, #1B8CE1);
 
     .app-logo {
-      height: 40px;
+      height: 35px;
       vertical-align: middle;
       margin-right: 10px;
       transition: all 0.3s ease;
     }
 
     .app-name {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       vertical-align: middle;
     }
   }
@@ -104,23 +104,31 @@
     box-sizing: border-box;
     padding-bottom: 50px;
 
-    &::-webkit-scrollbar {
-      width: 9px;
-      height: 9px;
-      background: transparent;
+    .menu-title {
+      font-size: 12px;
+      color: #5c6579;
+      padding: 10px;
     }
-    &::-webkit-scrollbar-corner {
-      background: transparent;
+    .menu-item-icon {
+      margin-right: 7px;
     }
-    &::-webkit-resizer{
-      background: transparent;
+    .menu-item-label {
+      margin-right: 10px;
     }
-    &::-webkit-scrollbar-track,
-    &::-webkit-scrollbar-thumb {
-      border-radius: 999px;
-      background-clip: content-box;
-      border: solid 2px transparent;
+    .menu-item-des {
+      opacity: 0.5;
+      font-size: 12px;
     }
+
+    .vc-menu-item .vc-menu-item--row,
+    .vc-menu-item .vc-menu-item--label {
+      transition: all 0.4s ease;
+    }
+    .vc-menu-item .vc-menu-item--row.is-hovered + .vc-menu-item--label,
+    .vc-menu-item .vc-menu-item--row.is-clicked + .vc-menu-item--label {
+      color: #F5F5FA;
+    }
+
     /*滚动轨道*/
     &::-webkit-scrollbar-track {
       background-color: rgba(255,255,255, 0.1);
@@ -129,10 +137,9 @@
     &::-webkit-scrollbar-thumb {
       min-height: 20px;
       background-color: rgba(255,255,255, 0.1);
-    
     }
     &::-webkit-scrollbar-thumb:hover{
-      background-color: #5A6274;
+      background-color: rgba(255,255,255, 0.3);
       border-width: 1px;
     }
   }
@@ -173,7 +180,7 @@
       height: 8px;
       position: absolute;
       left: 8px;
-      opacity: 0;
+      opacity: 0.3;
       transform: rotate(0deg);
       border-radius: 16px;
       transition: transform 200ms ease-in-out 0s, opacity 300ms ease-in-out 200ms;
@@ -254,14 +261,13 @@
       vertical-align: middle;
       line-height: 58px;
       padding: 0 10px;
-      cursor: pointer;
       font-size: 0.95rem;
       color: #515a6e;
       background-color: rgba(255,255,255, 0.1);
       transition: background-color 0.3s linear;
 
       &:hover {
-        background-color: rgba(40,44,52, 0.03);
+        // background-color: rgba(40,44,52, 0.03);
       }
 
       .tool-btn {
