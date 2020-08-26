@@ -1,13 +1,13 @@
 <template>
   <div class="app-header-box">
     <div class="float-left">
-      <ul class="app-header-tool">
+      <ul class="app-header-tool am-fade-left">
         <li><router-link to="/" class="m-link-effect"><i class="fa fa-home"></i>&nbsp;Home</router-link></li>
         <li><a href="http://lanyueos.com" target="_blank" class="m-link-effect">Website&nbsp;<i class="fa fa-external-link"></i></a></li>
       </ul>
     </div>
     <div class="float-right">
-      <ul class="app-header-tool">
+      <ul class="app-header-tool am-fade-right">
         <li><input class="tool-search-input" placeholder="Search..."/></li>
         <li><a href="https://github.com/mengdu/vue-element-admin-tpl" class="m-link-effect">Github&nbsp;<i class="fa fa-external-link"></i></a></li>
         <li><a href="#" class="m-link-effect">Docs&nbsp;<i class="fa fa-external-link"></i></a></li>

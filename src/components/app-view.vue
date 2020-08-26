@@ -1,5 +1,5 @@
 <template>
-  <m-container class="app-layout" direction="horizontal">
+  <m-container class="app-layout am-clip-circle" direction="horizontal">
     <m-sider class="app-sider"
       :class="{
         'is-close': navigation.isClose,
