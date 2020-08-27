@@ -7,6 +7,8 @@ import Message from 'vue-m-message'
 import MDialog from 'vue-m-dialog/dist'
 import ElementUI from 'element-ui'
 import { isProd } from './utils'
+import http from './utils/http'
+
 import 'font-awesome/css/font-awesome.min.css'
 import 'nprogress/nprogress.css'
 import 'vue-m-dialog/dist/css/default.css'
@@ -21,8 +23,24 @@ Vue.use(MDialog, {
   confirmName: 'mconfirm'
 })
 Vue.use(ElementUI)
-
 Vue.config.productionTip = false
+
+// http config
+http.defaults.baseURL = '/'
+
+// requeset before
+// http.interceptors.request.use(function (config) {
+//   return config
+// })
+
+// requeset after
+// http.interceptors.response.use(function (res) {
+//   return res
+// }, function (err) {
+//   // Any status codes that falls outside the range of 2xx cause this function to trigger
+//   // Do something with response error
+//   return Promise.reject(err)
+// })
 
 router.beforeEach((to, form, next) => {
   Nprogress.start()
@@ -36,11 +54,17 @@ router.afterEach(transition => {
   })
 })
 
+Vue.prototype.$http = http
+
 const app = new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
+if (!isProd()) {
+  window.app = app
+}
 
 if (!isProd()) {
   window.app = app
