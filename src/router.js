@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/home'
 import Login from './views/login'
+import Logout from './views/logout'
 import AppView from './components/app-view'
 import Dashboard from './views/admin/dashboard'
 import Pgae1 from './views/admin/page1'
@@ -15,6 +16,7 @@ const router = new Router({
   routes: [
     { path: '/', component: Home },
     { path: '/login', component: Login },
+    { path: '/logout', component: Logout },
     {
       path: '/admin',
       component: AppView,
