@@ -29,22 +29,50 @@ Vue.config.productionTip = false
 // http config
 http.defaults.baseURL = '/'
 
-// requeset before
+// // requeset before
 // http.interceptors.request.use(function (config) {
 //   return config
 // })
 
 // requeset after
-// http.interceptors.response.use(function (res) {
-//   return res
-// }, function (err) {
-//   // Any status codes that falls outside the range of 2xx cause this function to trigger
-//   // Do something with response error
-//   return Promise.reject(err)
-// })
+http.interceptors.response.use(function (res) {
+  console.log(res)
+  // const NO_LOGIN_CODE = 100
+  // const noLogin = res.data.code === NO_LOGIN_CODE
+  const noLogin = true
+  if (noLogin) {
+    app.$router.push({ name: 'login', params: { reload: 1 } })
+    return res
+  }
+  return res
+}, function (err) {
+  // Any status codes that falls outside the range of 2xx cause this function to trigger
+  // Do something with response error
+  return Promise.reject(err)
+})
 
-router.beforeEach((to, form, next) => {
+router.beforeEach(async (to, from, next) => {
+  // console.log(from.path, to.path)
   Nprogress.start()
+
+  const whiteList = ['login', 'logout', 'home']
+
+  if (whiteList.indexOf(to.name) > -1) return next()
+
+  const loginUser = store.state.user.loginUser
+
+  if (!loginUser) {
+    // 获取登录会话
+    const loginUser = await store.dispatch('user/getLoginInfo')
+
+    Nprogress.inc(0.5)
+
+    if (!loginUser) {
+      // 访客路由
+      if (to.meta.isGuest) return next()
+      return next({ name: 'login' })
+    }
+  }
 
   next()
 })
@@ -52,7 +80,7 @@ router.beforeEach((to, form, next) => {
 router.afterEach(transition => {
   setTimeout(() => {
     Nprogress.done()
-  })
+  }, 100)
 })
 
 Vue.prototype.$http = http

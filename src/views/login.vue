@@ -46,12 +46,19 @@ export default {
         return this.$msg.warning('用户名和密码不能为空')
       }
       this.isLoging = true
-
-      setTimeout(() => {
+      this.$store.dispatch('user/login', {
+        username: this.username,
+        password: this.password
+      }).then(res => {
+        this.isLoging = false
         this.$msg.success('登录成功')
         this.$router.push({ path: '/admin' })
-        this.isLoging = false
-      }, 2000)
+      })
+      // setTimeout(() => {
+      //   this.$msg.success('登录成功')
+      //   this.$router.push({ path: '/admin' })
+      //   this.isLoging = false
+      // }, 2000)
     }
   }
 }

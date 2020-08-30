@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import modules from './modules'
 
 Vue.use(Vuex)
 
@@ -9,7 +10,8 @@ const state = {
 
 const store = new Vuex.Store({
   strict: true,
-  state
+  state,
+  modules
 })
 
 export default store

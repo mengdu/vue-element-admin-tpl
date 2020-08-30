@@ -29,3 +29,9 @@ export function exitFullscreen () {
     document.msExitFullscreen()
   }
 }
+
+export const sleep = (time) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time)
+  })
+}

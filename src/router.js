@@ -14,9 +14,9 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history', // hash, history
   routes: [
-    { path: '/', component: Home },
-    { path: '/login', component: Login },
-    { path: '/logout', component: Logout },
+    { path: '/', name: 'home', component: Home },
+    { path: '/login', name: 'login', component: Login },
+    { path: '/logout', name: 'logout', component: Logout },
     {
       path: '/admin',
       component: AppView,

@@ -19,10 +19,10 @@
           </m-dropdown>
         </li>
         <li>
-          <m-dropdown align="right" :panel-style="{'min-width': '150px'}">
+          <m-dropdown align="right" :panel-style="{'min-width': '150px'}" v-if="loginUser">
             <button class="tool-btn">
-              <img :src="userImg" class="user-avatar"/>&nbsp;
-              <span>Administrator</span>&nbsp;
+              <img :src="loginUser.avatar" class="user-avatar"/>&nbsp;
+              <span>{{loginUser.nickname}}</span>&nbsp;
               <i class="fa fa-caret-down"></i>
             </button>
             <VcMenu :menus="userMenus" theme="light" slot="panel"/>
@@ -39,10 +39,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import VcMenu from '@dove-ui/menu'
 import MDropdown from './dropdown'
 import { requestFullScreen, exitFullscreen } from '../utils'
-import userImg from '../assets/user.jpg'
 
 export default {
   components: {
@@ -51,13 +51,15 @@ export default {
   },
   data () {
     return {
-      userImg,
       fullScreen: false,
       userMenus: [
         { label: 'Your profile', icon: 'fa fa-address-card', router: '/' },
         { label: 'Logout', icon: 'fa fa-arrow-circle-left', router: '/logout' }
       ]
     }
+  },
+  computed: {
+    ...mapState('user', ['loginUser'])
   },
   methods: {
     handleFullScreen () {
