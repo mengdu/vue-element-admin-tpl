@@ -13,6 +13,7 @@
     "core-js": "^2.6.5",
     "element-ui": "^2.11.1",
     "font-awesome": "^4.7.0",
+    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "vue": "^2.6.10",
     "vue-m-dialog": "^1.2.1",

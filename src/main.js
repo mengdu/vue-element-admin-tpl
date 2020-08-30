@@ -9,6 +9,7 @@ import ElementUI from 'element-ui'
 import { isProd } from './utils'
 import http from './utils/http'
 
+import 'normalize.css'
 import 'font-awesome/css/font-awesome.min.css'
 import 'nprogress/nprogress.css'
 import 'vue-m-dialog/dist/css/default.css'
