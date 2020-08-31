@@ -20,7 +20,7 @@
         @click="toggleNavigation"
         ></button>
     </m-sider>
-    <m-container>
+    <m-container style="overflow: hidden;">
       <m-header class="app-header"><AppHeader /></m-header>
       <m-main class="app-content">
         <transition appear name="m-page" mode="out-in">
