@@ -17,6 +17,8 @@ export const login = async (username, password) => {
     nickname: Math.random().toString(36),
     avatar: 'https://avatars2.githubusercontent.com/u/11366654?s=60&v=4'
   }
+
+  return { data: mockData.user }
 }
 
 export const getLoginInfo = () => {
