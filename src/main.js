@@ -39,11 +39,11 @@ http.interceptors.response.use(function (res) {
   console.log(res)
   // const NO_LOGIN_CODE = 100
   // const noLogin = res.data.code === NO_LOGIN_CODE
-  const noLogin = true
-  if (noLogin) {
-    app.$router.push({ name: 'login', params: { reload: 1 } })
-    return res
-  }
+  // const noLogin = true
+  // if (noLogin) {
+  //   app.$router.push({ name: 'login', params: { reload: 1 } })
+  //   return res
+  // }
   return res
 }, function (err) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
