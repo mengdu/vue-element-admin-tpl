@@ -100,5 +100,36 @@ a {
   border-width: 1px;
 }
 
+.block-box {
+  box-shadow: 0 4px 8px 0 rgba(36,46,66,0.06);
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  & + & {
+    margin-top: 15px;
+  }
+
+  .block-box--header {
+    padding: 12px;
+    background-color: #F5F7FA;
+    margin: -12px -12px 0 -12px;
+    border-radius: 4px 4px 0 0;
+    // border-bottom: 1px solid #EBEEF5;
+  }
+
+  .block-box--footer {
+    padding: 12px;
+    border-radius: 0 0 4px 4px;
+    background-color: #f9fbfd;
+    margin: 0 -12px -12px -12px;
+  }
+}
+
+.page-breadcrumb {
+  margin-bottom: 15px;
+}
+
 @import url('./animation.less');
 @import url('./app-view.less');
