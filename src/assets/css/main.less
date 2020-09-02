@@ -113,10 +113,15 @@ a {
 
   .block-box--header {
     padding: 12px;
-    background-color: #F5F7FA;
+    background-color: #f4f7fd;
     margin: -12px -12px 0 -12px;
     border-radius: 4px 4px 0 0;
     // border-bottom: 1px solid #EBEEF5;
+  }
+
+  .block-box--content {
+    padding: 12px;
+    margin: 0 -12px;
   }
 
   .block-box--footer {
@@ -129,6 +134,16 @@ a {
 
 .page-breadcrumb {
   margin-bottom: 15px;
+}
+
+// reset el-table
+.el-table--border td,.el-table--border th {
+  padding: 5px 0
+}
+
+.el-table--border .el-table__header-wrapper th {
+  background-color: #f4f7fd;
+  color: #4d5965
 }
 
 @import url('./animation.less');
