@@ -2,13 +2,18 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import modules from './modules'
 import { SET_WATERMARK } from './types'
+import { isProd, isTest } from '../utils'
 
 Vue.use(Vuex)
 
 const state = {
-  count: 1,
+  env: isProd()
+    ? 'prd'
+    : isTest() ? 'test' : 'dev',
   watermark: null
 }
+
+console.log(process.env)
 
 const mutations = {
   [SET_WATERMARK] (state, img) {

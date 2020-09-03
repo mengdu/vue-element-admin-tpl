@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="[env && 'env-' + env]">
     <div class="watermark-bg"
       v-if="watermark"
       :style="{
@@ -19,7 +19,7 @@ export default {
     MainView
   },
   computed: {
-    ...mapState(['watermark'])
+    ...mapState(['watermark', 'env'])
   }
 }
 </script>
